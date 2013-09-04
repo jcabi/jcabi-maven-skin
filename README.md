@@ -20,7 +20,7 @@ Use it in your `site.xml`, as explained in
 ## Questions?
 
 If you have any questions about the framework, or something doesn't work as expected,
-please [submit an issue here](https://github.com/yegor256/jcabi/issues/new).
+please [submit an issue here](https://github.com/jcabi/jcabi-maven-skin/issues/new).
 If you want to discuss, please use our [Google Group](https://groups.google.com/forum/#!forum/jcabi).
 
 ## How to contribute?
