@@ -11,7 +11,7 @@ Use it in your `site.xml`, as explained in
   <skin>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
-    <version>${project.version}</version>
+    <version>0.8</version>
   </skin>
   [...]
 </project>
