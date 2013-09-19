@@ -110,8 +110,7 @@ pre {
     color: #f8f8f8;
     padding: 0.5em 1em;
     font-family: 'Monaco', monospace;
-    font-size: 11px;
-    width: 80%;
+    font-size: 13px;
     overflow-x: auto;
     line-height: 1.3em;
 }
