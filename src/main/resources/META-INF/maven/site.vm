@@ -180,7 +180,8 @@
                             ${bodyContent}
                         </div>
                     </article>
-                    <img class="maven-mobile" src="${relativePath}/images/built-by-maven.png" style="float:right" width="80px"/>
+                    <img class="maven-mobile" src="${relativePath}/images/built-by-maven.png"
+                        alt="built by maven" style="float:right" width="80"/>
                 </div>
                 <div class="legal-notes">
                     <div class="copyright">

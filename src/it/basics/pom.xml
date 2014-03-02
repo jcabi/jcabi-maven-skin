@@ -33,11 +33,7 @@
     <parent>
         <groupId>com.jcabi</groupId>
         <artifactId>parent</artifactId>
-        <!--
-        @todo #137 Here we should have project.version, as below, but it
-        doesn't work for some reason. We should investigate and fix.
-        -->
-       <version>0.7.8</version>
+       <version>0.17</version>
     </parent>
     <artifactId>jcabi-test-basics</artifactId>
     <name>basics</name>

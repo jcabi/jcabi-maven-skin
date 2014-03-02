@@ -56,8 +56,8 @@ MatcherAssert.assertThat(
     XhtmlMatchers.hasXPaths(
         '//xhtml:head/xhtml:link[@rel="shortcut icon"]',
         '//xhtml:body',
-        "//xhtml:p[contains(.,'${version}')]",
-        '//xhtml:p[contains(.,"test-org-name")]'
+        "//xhtml:div[contains(.,'${version}')]",
+        '//xhtml:div[contains(.,"test-org-name")]'
     )
 )
 
