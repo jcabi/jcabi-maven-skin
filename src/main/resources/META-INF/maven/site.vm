@@ -139,6 +139,7 @@
                         <div class="date-numbers">
                             $dateFormat.applyPattern('dd-MMM-yyyy')
                             ${dateFormat.format($currentDate)}
+                            <br/>
                             ${project.version}
                         </div>
                         #set ( $url = $project.scm.connection )
