@@ -80,6 +80,9 @@
                             <goal>update-stylesheets</goal>
                         </goals>
                         <configuration>
+                            <excludes>
+                                <exclude>${basedir}/src/main/resources/scss/general.scss</exclude>
+                            </excludes>
                             <sassSourceDirectory>${basedir}/src/main/resources/scss</sassSourceDirectory>
                             <destination>${project.build.outputDirectory}/css</destination>
                         </configuration>
