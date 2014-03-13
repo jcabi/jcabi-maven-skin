@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='puzzles.xsl'?><puzzles>
+<puzzle>
+<ticket>86</ticket>
+<file>src/it/basics/verify.groovy</file>
+<prefix>     * </prefix>
+<body>This validation doesn't work because maven-site-plugin produces invalid HTML5 output (still using TT element, which is obsolete in</body>
+<estimate>0</estimate>
+<lines>68-69</lines>
+<owner>someone</owner>
+</puzzle>
+<puzzle>
+<ticket>86</ticket>
+<file>src/it/basics/verify.groovy</file>
+<prefix>     * </prefix>
+<body>This validation doesn't work because maven-site-plugin produces invalid HTML5 output (it is using an obsolete NAME attribute on some HTML elements). We're expecting exactly one warning here, because of that.</body>
+<estimate>0</estimate>
+<lines>77-80</lines>
+<owner>someone</owner>
+</puzzle>
+</puzzles>
