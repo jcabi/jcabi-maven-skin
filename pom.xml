@@ -36,7 +36,7 @@
         <version>1.4</version>
     </parent>
     <artifactId>jcabi-maven-skin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     <name>jcabi-maven-skin</name>
     <description>JCabi Maven Skin</description>
