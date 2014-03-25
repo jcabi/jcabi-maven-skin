@@ -1,6 +1,6 @@
 <img src="http://img.jcabi.com/logo.png" width="200px" height="48px" />
 
-More details are here: [www.jcabi.com/jcabi-maven-skin](http://www.jcabi.com/jcabi-maven-skin/index.html)
+More details are here: [skin.jcabi.com](http://skin.jcabi.com/index.html)
 
 Use it in your `site.xml`, as explained in
 [skinning](http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html#Skinning):
@@ -11,7 +11,7 @@ Use it in your `site.xml`, as explained in
   <skin>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
-    <version>0.8</version>
+    <version>1.0</version>
   </skin>
   [...]
 </project>
