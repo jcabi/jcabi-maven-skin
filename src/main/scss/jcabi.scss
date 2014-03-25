@@ -28,7 +28,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
 
 $main-font: 'Ubuntu', sans-serif;
@@ -87,7 +86,7 @@ pre {
 tt {
     background-color: #eee;
     padding: 0.05em 0.5em;
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: $code-font;
     font-weight: 500;
     border: 1px solid #ccc;
     border-radius: 3px;
