@@ -1,2 +1,4 @@
 language: java
+before_install:
+  - unset GEM_PATH
 script: mvn clean install -Pqulice

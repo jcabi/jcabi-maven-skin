@@ -178,7 +178,7 @@
                     <img class="maven-mobile" src="${relativePath}/images/built-by-maven.png"
                         alt="built by maven" style="float:right" width="80"/>
                 </div>
-                <div class="legal-notes">
+                <footer class="legal-notes">
                     <div class="copyright">
                         Copyright &#169;
                         #set ($currentYear = ${currentDate.year} + 1900)
@@ -192,7 +192,7 @@
                         <br/>
                         <a href="http://maven.apache.org/privacy-policy.html">Privacy Policy</a>.
                     </div>
-                </div>
+                </footer>
             </div>
         </div>
     </body>
