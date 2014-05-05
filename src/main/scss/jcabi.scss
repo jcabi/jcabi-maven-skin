@@ -29,10 +29,10 @@
  */
 
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
 
 $main-font: 'Maven Pro', sans-serif;
-$code-font: 'Source Code Pro', sans-serif;
+$code-font: 'Ubuntu Mono', monospace;
 $switch-orientation-point: '1200px';
 $light-gray: #d3d3d3;
 
@@ -138,7 +138,7 @@ table {
   }
 }
 
-div.page {
+.page {
   margin-left: auto;
   margin-right: auto;
   white-space: nowrap;
@@ -149,7 +149,7 @@ div.page {
   }
 }
 
-div.menu-section {
+.menu-section {
   vertical-align: top;
   display: inline-block;
   width: 30%;
@@ -159,14 +159,16 @@ div.menu-section {
   }
 }
 
-div.date {
+.date {
   color: $light-gray;
 }
 
-div.legal-notes {
-  margin-top: 2em;
+.legal-notes {
+  margin-top: 1em;
   color: #808080;
-  font-size: .5em;
+  font-size: 1em;
+  line-height: 1em;
+  text-align: center;
 
   @media all and (max-width: $switch-orientation-point) {
     text-align: center;
@@ -228,6 +230,7 @@ div.legal-notes {
 
   & > li > ul {
     margin-bottom: 1em;
+    border-top: 1px solid $light-gray;
   }
 
   li {
@@ -239,7 +242,6 @@ div.legal-notes {
     ul {
       list-style: none;
       padding-left: .5em;
-      border-top: 1px solid $light-gray;
 
       li {
         text-transform: none;
@@ -265,4 +267,9 @@ li {
   a {
     border: 0;
   }
+}
+
+.maven-mobile {
+  float: right;
+  width: 64px;
 }
