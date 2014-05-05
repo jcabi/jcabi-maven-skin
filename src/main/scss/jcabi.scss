@@ -166,6 +166,7 @@ div.date {
 div.legal-notes {
   margin-top: 2em;
   color: #808080;
+  font-size: .5em;
 
   @media all and (max-width: $switch-orientation-point) {
     text-align: center;
@@ -225,6 +226,10 @@ div.legal-notes {
     text-align: center;
   }
 
+  & > li > ul {
+    margin-bottom: 1em;
+  }
+
   li {
     font-weight: 700;
     text-transform: uppercase;
@@ -232,8 +237,8 @@ div.legal-notes {
     overflow: hidden;
 
     ul {
-      padding: 1em 0 2em;
       list-style: none;
+      padding-left: .5em;
       border-top: 1px solid $light-gray;
 
       li {
