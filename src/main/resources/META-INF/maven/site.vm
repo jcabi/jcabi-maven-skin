@@ -37,19 +37,12 @@
                 #end
             #end
         #end
-        <link rel="stylesheet" href="${relativePath}/css/highlight.css" />
         <script src="${relativePath}/js/jquery-1.8.3.min.js"></script>
-        <script src="${relativePath}/js/highlight-7.3.min.js"></script>
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
         <link href="${relativePath}/css/jcabi.css" rel="stylesheet"/>
         <script>
             $(document).ready(
                 function() {
-                    $('div.source pre').each(
-                        function (idx, element) {
-                            hljs.highlightBlock(element);
-                        }
-                    );
                     $(".menu-button").click(
                         function() {
                             if ($("#here-goes-menu").attr("class") == "menu-off") {
