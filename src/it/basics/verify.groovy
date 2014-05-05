@@ -28,8 +28,8 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import com.rexsl.test.XhtmlMatchers
-import com.rexsl.w3c.ValidatorBuilder
+import com.jcabi.matchers.XhtmlMatchers
+import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
 
