@@ -135,6 +135,7 @@
                             <excludes>
                                 <exclude>checkstyle:/src/main/resources/images/.*</exclude>
                                 <exclude>checkstyle:/src/main/resources/js/.*</exclude>
+                                <exclude>xml:/src/it/settings.xml</exclude>
                             </excludes>
                         </configuration>
                     </plugin>

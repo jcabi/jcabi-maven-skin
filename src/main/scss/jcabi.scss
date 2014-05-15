@@ -34,8 +34,11 @@
 $main-font: 'Maven Pro', sans-serif;
 $code-font: 'Ubuntu Mono', monospace;
 $switch-orientation-point: '1200px';
-$gray: #808080;
-$light-gray: #d3d3d3;
+$color-black: #111;
+$color-white: #fff;
+$color-gray: #808080;
+$color-gray-light: #d3d3d3;
+$color-gray-lighter: #eee;
 
 body {
   margin: 0;
@@ -43,7 +46,8 @@ body {
   font-family: $main-font;
   font-size: 1.4em;
   line-height: 1.4em;
-  background-color: $light-gray;
+  background-color: $color-gray-light;
+  color: $color-black;
 
   @media all and (max-width: $switch-orientation-point) {
     font-size: 1.2em;
@@ -58,48 +62,34 @@ a {
 }
 
 tt {
-  background-color: #eee;
+  background-color: $color-gray-lighter;
   padding: 0 .5em;
   font-family: $code-font;
 }
 
-h1,
-h2,
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.3em;
+}
 h3 {
-  letter-spacing: -1px;
-  text-transform: uppercase;
+  font-size: 1.1em;
 }
 
 pre {
-  border-left: 2px solid $gray;
+  border-left: 2px solid $color-gray;
   margin-left: 1em;
-  color: inherit;
+  color: $color-gray;
   padding: 1em;
   font-family: $code-font;
+  font-size: 0.9em;
   overflow-x: auto;
   line-height: 1.3em;
 }
 
-#breadcrumbs {
-  list-style: none;
-  padding-left: 0;
-
-  li {
-    display: inline;
-
-    &:before {
-      content: '>';
-    }
-
-    &:first-child:before {
-      content: none;
-    }
-
-  }
-}
-
 table {
-  background-color: #fff;
+  background-color: $color-white;
   border: 0;
   border-collapse: collapse;
 
@@ -158,12 +148,12 @@ table {
 }
 
 .date {
-  color: $light-gray;
+  color: $color-gray;
 }
 
 .legal-notes {
   margin-top: 1em;
-  color: $gray;
+  color: $color-gray;
   font-size: 0.8em;
   line-height: 1em;
   text-align: center;
@@ -174,7 +164,7 @@ table {
 }
 
 .content {
-  background-color: #fff;
+  background-color: $color-white;
   position: relative;
   padding: 3em;
 
@@ -212,7 +202,7 @@ table {
 }
 
 .menu {
-  background-color: #fff;
+  background-color: $color-white;
   padding: 2em 1em 1em;
   margin-right: 1em;
   font-size: 1em;
@@ -224,12 +214,12 @@ table {
 
   & > li > ul {
     margin-bottom: 1em;
-    border-top: 1px solid $light-gray;
+    border-top: 1px solid $color-gray-light;
   }
 
   li {
     font-weight: 700;
-    text-transform: uppercase;
+    color: $color-gray;
     text-overflow: ellipsis;
     overflow: hidden;
 
@@ -242,7 +232,7 @@ table {
       padding-left: .5em;
 
       li {
-        text-transform: none;
+        color: $color-black;
         font-weight: 400;
      }
     }
@@ -260,7 +250,7 @@ table {
   }
 }
 
-.logo-section {
+.logo {
 
   a {
     border: 0;
@@ -269,5 +259,5 @@ table {
 
 .maven-logo {
   float: right;
-  width: 64px;
+  width: 60px;
 }

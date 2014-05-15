@@ -33,7 +33,6 @@ import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
 
-def version = new XmlParser().parse(new File(basedir, 'pom.xml')).version.text()
 MatcherAssert.assertThat(
     new File(basedir, 'build.log').text,
     Matchers.not(Matchers.containsString('ERROR'))
@@ -51,6 +50,7 @@ MatcherAssert.assertThat(
 }
 
 def html = new File(basedir, 'target/site/index.html').text
+def version = new XmlParser().parse(new File(basedir, 'pom.xml')).version.text()
 MatcherAssert.assertThat(
     html,
     XhtmlMatchers.hasXPaths(

@@ -62,7 +62,7 @@
             #end
             <a href="${href}" title="${item.name}">${item.name}</a>
         #end
-        <section class="page" itemscope itemtype="http://schema.org/BlogPosting">
+        <section class="page" itemscope="" itemtype="http://schema.org/BlogPosting">
             <nav class="menu-section" role="navigation">
                 <ul class="menu">
                     #macro (isExpanded $display $item)
@@ -106,9 +106,9 @@
             <div class="right-side">
                 <main role="main">
                     <div class="content">
-                        <header role="heading">
+                        <header>
                             <i class="menu-button fa fa-align-justify"></i>
-                            <div class="logo-section">
+                            <div class="logo">
                                 <a href="${decoration.bannerLeft.href}" title="${decoration.bannerLeft.title}">
                                     <img src="${decoration.bannerLeft.src}"
                                         alt="${decoration.bannerLeft.name}"
