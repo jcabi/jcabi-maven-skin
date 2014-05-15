@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<!--
- * Copyright (c) 2012-2014, jcabi.com
- * All rights reserved.
- -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>${title}</title>
+        <link media="all" rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
         <link media="all" rel="stylesheet" type="text/css" href="${relativePath}/css/jcabi.css"/>
         #foreach ($author in $authors)
             <meta name="author" content="${author}" />
@@ -37,9 +34,7 @@
                 #end
             #end
         #end
-        <script src="${relativePath}/js/jquery-1.8.3.min.js"></script>
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
-        <link href="${relativePath}/css/jcabi.css" rel="stylesheet"/>
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
         <script>
             $(document).ready(
                 function() {
@@ -67,9 +62,9 @@
             #end
             <a href="${href}" title="${item.name}">${item.name}</a>
         #end
-        <section class="page">
-            <nav class="menu-section">
-                <ul id="menu">
+        <section class="page" itemscope itemtype="http://schema.org/BlogPosting">
+            <nav class="menu-section" role="navigation">
+                <ul class="menu">
                     #macro (isExpanded $display $item)
                         #if ($item && $item.items && $item.items.size() > 0)
                             #foreach ($sub in $item.items)
@@ -81,12 +76,8 @@
                         #end
                     #end
                     #macro (menuItem $item)
-                        <li>
-                            #if ($alignedFileName == $item.href)
-                                <strong>#link($item)</strong>
-                            #else
-                                #link($item)
-                            #end
+                        <li #if ($alignedFileName == $item.href) class='active' #end>
+                            <span>#link($item)</span>
                             #set ($display = false)
                             #isExpanded($display $item)
                             #if ($item.collapse == false || $display || $alignedFileName == $item.href)
@@ -112,74 +103,66 @@
                     #end
                 </ul>
             </nav>
-            <div id="right-side">
-                <div id="content">
-                    <i class="menu-button fa fa-align-justify"></i>
-                    <div class="logo-section">
-                        <a href="${decoration.bannerLeft.href}" title="${decoration.bannerLeft.title}">
-                            <img src="${decoration.bannerLeft.src}"
-                                alt="${decoration.bannerLeft.name}"
-                                #if (${decoration.bannerLeft.width})
-                                    width="${decoration.bannerLeft.width}"
-                                #end
-                                #if (${decoration.bannerLeft.height})
-                                    height="${decoration.bannerLeft.height}"
-                                #end
-                            />
-                        </a>
-                    </div>
-                    <div class="date">
-                        <div class="date-numbers">
-                            <strong>${project.version}</strong>
-                            $dateFormat.applyPattern('dd-MMM-yyyy')
-                            ${dateFormat.format($currentDate)}
-                        </div>
-                        #set ( $url = $project.scm.connection )
-                        #if ( $url.matches('.*github.com(?:/|:)([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-]+)\.git') )
-                            #set ( $pos1 = $url.lastIndexOf('github.com') + 11 )
-                            #set ( $pos2 = $url.lastIndexOf('/') + 1 )
-                            #set ( $owner = $url.substring($pos1, $url.lastIndexOf('/')) )
-                            #set ( $repo = $url.substring($pos2, $url.lastIndexOf('.git')) )
-                            <div class="github">
-                                <iframe
-                                    class="github-large"
-                                    src="http://ghbtns.com/github-btn.html?user=${owner}&amp;repo=${repo}&amp;type=watch&amp;count=true&amp;size=large"
-                                    allowtransparency="true"
-                                    frameborder="0"
-                                    scrolling="0"
-                                    width="170"
-                                    height="30">
-                                </iframe>
-                                <iframe
-                                    class="github-small"
-                                    src="http://ghbtns.com/github-btn.html?user=${owner}&amp;repo=${repo}&amp;type=watch&amp;count=true&amp;size=small"
-                                    allowtransparency="true"
-                                    frameborder="0"
-                                    scrolling="0"
-                                    width="170"
-                                    height="30">
-                                </iframe>
+            <div class="right-side">
+                <main role="main">
+                    <div class="content">
+                        <header role="heading">
+                            <i class="menu-button fa fa-align-justify"></i>
+                            <div class="logo-section">
+                                <a href="${decoration.bannerLeft.href}" title="${decoration.bannerLeft.title}">
+                                    <img src="${decoration.bannerLeft.src}"
+                                        alt="${decoration.bannerLeft.name}"
+                                        #if (${decoration.bannerLeft.width})
+                                            width="${decoration.bannerLeft.width}"
+                                        #end
+                                        #if (${decoration.bannerLeft.height})
+                                            height="${decoration.bannerLeft.height}"
+                                        #end
+                                        itemprop="image"
+                                    />
+                                </a>
                             </div>
+                            <div class="date">
+                                <div class="date-numbers">
+                                    <strong itemprop="version">${project.version}</strong>
+                                    <time itemprop="datePublished" datetime="${currentDate}">
+                                        $dateFormat.applyPattern('dd-MMM-yyyy')
+                                        ${dateFormat.format($currentDate)}
+                                    </time>
+                                </div>
+                                #set ( $url = $project.scm.connection )
+                                #if ( $url.matches('.*github.com(?:/|:)([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-]+)\.git') )
+                                    #set ( $pos1 = $url.lastIndexOf('github.com') + 11 )
+                                    #set ( $pos2 = $url.lastIndexOf('/') + 1 )
+                                    #set ( $owner = $url.substring($pos1, $url.lastIndexOf('/')) )
+                                    #set ( $repo = $url.substring($pos2, $url.lastIndexOf('.git')) )
+                                    <div>
+                                        <iframe src="http://ghbtns.com/github-btn.html?user=${owner}&amp;repo=${repo}&amp;type=watch&amp;count=true&amp;size=large"
+                                            style="border-width:0px;overflow:hidden;width:170px;height:30px;">
+                                        </iframe>
+                                    </div>
+                                #end
+                            </div>
+                            <div id="here-goes-menu" class="menu-off"></div>
+                        </header>
+                        <article role="article" itemprop="articleBody">
+                            ${bodyContent}
+                            <img class="maven-logo" src="//img.jcabi.com/built-by-maven.png" alt="built by maven"/>
+                        </article>
+                    </div>
+                </main>
+                <footer class="legal-notes">
+                    <div>
+                        Copyright &#169;
+                        #set ($currentYear = ${currentDate.year} + 1900)
+                        #if (${project.inceptionYear} && ${project.inceptionYear} != ${currentYear.toString()})
+                            ${project.inceptionYear}-${currentYear}
+                        #else
+                            ${currentYear}
                         #end
                     </div>
-                    <div id="here-goes-menu" class="menu-off"></div>
-                    <article>
-                        ${bodyContent}
-                    </article>
-                    <img class="maven-mobile" src="${relativePath}/images/built-by-maven.png" alt="built by maven"/>
-                </div>
-                <footer class="legal-notes">
-                    Copyright &#169;
-                    #set ($currentYear = ${currentDate.year} + 1900)
-                    #if (${project.inceptionYear} && ${project.inceptionYear} != ${currentYear.toString()})
-                        ${project.inceptionYear}-${currentYear}
-                    #else
-                        ${currentYear}
-                    #end
-                    <br/>
-                    ${project.organization.name}, All Rights Reserved.
-                    <br/>
-                    <a href="http://maven.apache.org/privacy-policy.html">Privacy Policy</a>.
+                    <div>${project.organization.name}, All Rights Reserved.</div>
+                    <div><a href="http://maven.apache.org/privacy-policy.html">Privacy Policy</a>.</div>
                 </footer>
             </div>
         </section>

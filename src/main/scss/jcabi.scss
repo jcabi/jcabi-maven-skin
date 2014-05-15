@@ -173,7 +173,7 @@ table {
   }
 }
 
-#content {
+.content {
   background-color: #fff;
   position: relative;
   padding: 3em;
@@ -183,7 +183,7 @@ table {
   }
 }
 
-#right-side {
+.right-side {
   white-space: normal;
   display: inline-block;
   width: 70%;
@@ -203,10 +203,6 @@ table {
   }
 }
 
-.github-small {
-  display: none;
-}
-
 .mobile-menu {
   display: none;
 
@@ -215,7 +211,7 @@ table {
   }
 }
 
-#menu {
+.menu {
   background-color: #fff;
   padding: 2em 1em 1em;
   margin-right: 1em;
@@ -236,6 +232,10 @@ table {
     text-transform: uppercase;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    &.active {
+      font-weight: bold;
+    }
 
     ul {
       list-style: none;
@@ -267,7 +267,7 @@ table {
   }
 }
 
-.maven-mobile {
+.maven-logo {
   float: right;
   width: 64px;
 }
