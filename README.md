@@ -13,7 +13,7 @@ Use it in your `site.xml`, as explained in
   <skin>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
-    <version>1.0</version>
+    <version>1.3</version>
   </skin>
   [...]
 </project>
