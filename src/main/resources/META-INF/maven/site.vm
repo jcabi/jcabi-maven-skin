@@ -64,7 +64,7 @@
         #end
         <section class="page" itemscope="" itemtype="http://schema.org/BlogPosting">
             <nav class="menu-section" role="navigation">
-                <ul class="menu">
+                <ul class="menu" id="menu">
                     #macro (isExpanded $display $item)
                         #if ($item && $item.items && $item.items.size() > 0)
                             #foreach ($sub in $item.items)

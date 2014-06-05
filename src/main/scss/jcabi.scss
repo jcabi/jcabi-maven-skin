@@ -52,6 +52,8 @@ body {
   @media all and (max-width: $switch-orientation-point) {
     font-size: 1.2em;
     line-height: 1.4em;
+    background-color: $color-white;
+    padding: 0;
   }
 }
 
@@ -61,7 +63,7 @@ a {
   text-decoration: none;
 }
 
-tt {
+code, tt {
   background-color: $color-gray-lighter;
   padding: 0 .5em;
   font-family: $code-font;
@@ -86,6 +88,11 @@ pre {
   font-size: 0.9em;
   overflow-x: auto;
   line-height: 1.3em;
+
+  @media all and (max-width: $switch-orientation-point) {
+    border-left: 0;
+    margin-left: 0;
+  }
 }
 
 table {
@@ -159,7 +166,7 @@ table {
   text-align: center;
 
   @media all and (max-width: $switch-orientation-point) {
-    text-align: center;
+    display: none;
   }
 }
 
@@ -259,5 +266,10 @@ table {
 
 .maven-logo {
   float: right;
+  margin-top: -40px;
   width: 60px;
+
+  @media all and (max-width: $switch-orientation-point) {
+    display: none;
+  }
 }

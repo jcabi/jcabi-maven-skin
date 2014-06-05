@@ -79,7 +79,7 @@ MatcherAssert.assertThat(
      *  some HTML elements). We're expecting exactly one warning here,
      *  because of that.
      */
-    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(1))
+    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(2))
 )
 
 def cssResponse = new ValidatorBuilder().css().validate(
