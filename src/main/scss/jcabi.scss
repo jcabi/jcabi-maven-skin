@@ -39,18 +39,19 @@ $white: #fff;
 $gray: #808080;
 $gray-light: #d3d3d3;
 $gray-lighter: #eee;
+$em: 20px;
 
 body {
   margin: 0;
-  padding: 1em;
+  padding: $em;
   font-family: $main-font;
-  font-size: 1.4em;
-  line-height: 1.4em;
+  font-size: $em;
+  line-height: 1.3 * $em;
   background-color: $gray-light;
   color: $black;
   @media all and (max-width: $width) {
-    font-size: 1.2em;
-    line-height: 1.4em;
+    font-size: .8 * $em;
+    line-height: 1 * $em;
     background-color: $white;
     padding: 0;
   }
@@ -66,32 +67,35 @@ a {
 
 code, tt {
   background-color: $gray-lighter;
-  padding: 0 .5em;
+  padding: 0 .5 * $em;
   font-family: $code-font;
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.9 * $em;
+  line-height: 1.9 * $em;
   font-variant: small-caps;
 }
 h2 {
-  font-size: 1.3em;
+  font-size: 1.7 * $em;
+  line-height: 1.7 * $em;
   font-variant: small-caps;
 }
 h3 {
-  font-size: 1.1em;
+  font-size: 1.5 * $em;
+  line-height: 1.5 * $em;
   font-variant: small-caps;
 }
 
 pre {
   border-left: 2px solid $gray;
-  margin-left: 1em;
+  margin-left: $em;
   color: $gray;
-  padding: 1em;
+  padding: $em;
   font-family: $code-font;
-  font-size: 0.9em;
+  font-size: .9 * $em;
   overflow-x: auto;
-  line-height: 1.3em;
+  line-height: $em;
   @media all and (max-width: $width) {
     border-left: 0;
     margin-left: 0;
@@ -114,17 +118,16 @@ table {
   th {
     background-color: #f2f2f2;
     color: #585858;
-    padding-left: .7em;
-    padding-top: .7em;
-    padding-bottom: .7em;
+    padding-left: .7 * $em;
+    padding-top: .7 * $em;
+    padding-bottom: .7 * $em;
     font-weight: normal;
-    font-size: 1.2em;
     text-align: left;
     border-bottom: 1px solid #fff;
   }
   td {
     vertical-align: top;
-    padding: .7em;
+    padding: .7 * $em;
     &:nth-child(1) {
       width: 30%;
     }
@@ -150,10 +153,10 @@ table {
   }
   .menu {
     background-color: $white;
-    padding: 2em 1em 1em;
-    margin-right: 1em;
-    font-size: 1em;
-    line-height: 1.3em;
+    padding: 2 * $em $em $em;
+    margin-right: $em;
+    font-size: $em;
+    line-height: 1.3 * $em;
     @media all and (max-width: $width) {
       text-align: center;
     }
@@ -162,7 +165,7 @@ table {
         font-variant: small-caps;
       }
       & > ul {
-        margin-bottom: 1em;
+        margin-bottom: $em;
         border-top: 1px solid $gray-light;
       }
     }
@@ -176,7 +179,7 @@ table {
       }
       ul {
         list-style: none;
-        padding-left: .5em;
+        padding-left: .5 * $em;
         li {
           color: $black;
           font-weight: 400;
@@ -191,15 +194,41 @@ table {
   }
 }
 
-.date {
+.teamed {
+  margin-top: .6 * $em;
+}
+
+.badges {
+  margin-top: .6 * $em;
   color: $gray;
+  list-style: none;
+  padding-left: 0;
+  font-size: .8 * $em;
+  li {
+    display: inline;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    padding: .2 * $em;
+    margin-right: .6 * $em;
+    &.menu-button {
+      display: none;
+      cursor: pointer;
+      &:hover {
+        background-color: $gray;
+        color: white;
+      }
+      @media all and (max-width: $width) {
+        display: inline;
+      }
+    }
+  }
 }
 
 .legal-notes {
-  margin-top: 1em;
+  margin-top: $em;
   color: $gray;
-  font-size: 0.8em;
-  line-height: 1em;
+  font-size: .8 * $em;
+  line-height: $em;
   text-align: center;
   @media all and (max-width: $width) {
     display: none;
@@ -209,10 +238,18 @@ table {
 .content {
   background-color: $white;
   position: relative;
-  padding: 3em;
+  padding: 3 * $em;
   @media all and (max-width: $width) {
-    padding: 1em;
+    padding: $em;
   }
+}
+
+.fork-me {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 7 * $em;
+  height: 7 * $em;
 }
 
 .right-side {
@@ -221,15 +258,6 @@ table {
   width: 70%;
   @media all and (max-width: $width) {
     width: 100%;
-  }
-}
-
-.menu-button {
-  float: right;
-  font-size: 2em;
-  display: none;
-  @media all and (max-width: $width) {
-    display: block;
   }
 }
 
@@ -243,14 +271,5 @@ table {
 .logo {
   a {
     border: 0;
-  }
-}
-
-.maven-logo {
-  float: right;
-  margin-top: -40px;
-  width: 60px;
-  @media all and (max-width: $width) {
-    display: none;
   }
 }

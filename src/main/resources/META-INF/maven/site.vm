@@ -4,7 +4,6 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>${title}</title>
-        <link media="all" rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
         <link media="all" rel="stylesheet" type="text/css" href="${relativePath}/css/jcabi.css"/>
         #foreach ($author in $authors)
             <meta name="author" content="${author}" />
@@ -107,7 +106,6 @@
                 <main role="main">
                     <div class="content">
                         <header>
-                            <i class="menu-button fa fa-align-justify"></i>
                             <div class="logo">
                                 <a href="${decoration.bannerLeft.href}"
                                     title="#if ($decoration.bannerLeft.title) ${decoration.bannerLeft.title} #else logo #end">
@@ -123,33 +121,38 @@
                                     />
                                 </a>
                             </div>
-                            <div class="date">
-                                <div class="date-numbers">
+                            <div class="teamed">
+                                <a href="http://www.teamed.io">
+                                    <img src="http://img.teamed.io/btn.svg" alt="teamed.io logo"/>
+                                </a>
+                            </div>
+                            <ul class="badges">
+                                <li>
                                     <strong itemprop="version">${project.version}</strong>
+                                </li>
+                                <li>
                                     $dateFormat.applyPattern("yyyy-MM-dd'T'hh:mm:ss'Z'")
                                     <time itemprop="datePublished" datetime="${dateFormat.format($currentDate)}">
                                         $dateFormat.applyPattern('dd-MMM-yyyy')
                                         ${dateFormat.format($currentDate)}
                                     </time>
-                                </div>
-                                #set ( $url = $project.scm.connection )
-                                #if ( $url.matches('.*github.com(?:/|:)([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-]+)\.git') )
-                                    #set ( $pos1 = $url.lastIndexOf('github.com') + 11 )
-                                    #set ( $pos2 = $url.lastIndexOf('/') + 1 )
-                                    #set ( $owner = $url.substring($pos1, $url.lastIndexOf('/')) )
-                                    #set ( $repo = $url.substring($pos2, $url.lastIndexOf('.git')) )
-                                    <div>
-                                        <iframe src="http://ghbtns.com/github-btn.html?user=${owner}&amp;repo=${repo}&amp;type=watch&amp;count=true&amp;size=large"
-                                            style="border-width:0px;overflow:hidden;width:170px;height:30px;">
-                                        </iframe>
-                                    </div>
-                                #end
-                            </div>
-                            <div id="here-goes-menu" class="menu-off"></div>
+                                </li>
+                                <li class="menu-button">menu</li>
+                            </ul>
                         </header>
+                        <div id="here-goes-menu" class="menu-off"></div>
+                        #set ( $url = $project.scm.connection )
+                        #if ( $url.matches('.*github.com(?:/|:)([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-]+)\.git') )
+                            #set ( $pos1 = $url.lastIndexOf('github.com') + 11 )
+                            #set ( $pos2 = $url.lastIndexOf('/') + 1 )
+                            #set ( $owner = $url.substring($pos1, $url.lastIndexOf('/')) )
+                            #set ( $repo = $url.substring($pos2, $url.lastIndexOf('.git')) )
+                            <a href="https://github.com/${owner}/${repo}">
+                                <img src="http://img.jcabi.com/fork-me.svg" class="fork-me"/>
+                            </a>
+                        #end
                         <article role="article" itemprop="articleBody">
                             ${bodyContent}
-                            <img class="maven-logo" src="//img.jcabi.com/built-by-maven.png" alt="built by maven"/>
                         </article>
                     </div>
                 </main>
