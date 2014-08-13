@@ -1,5 +1,7 @@
 <img src="http://img.jcabi.com/logo-square.png" width="64px" height="64px" />
- 
+
+[![Made By Teamed.io](http://img.teamed.io/btn.svg)](http://www.teamed.io)
+
 [![Build Status](https://travis-ci.org/jcabi/jcabi-maven-skin.svg?branch=master)](https://travis-ci.org/jcabi/jcabi-maven-skin)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.jcabi/jcabi-maven-skin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.jcabi/jcabi-maven-skin)
 
@@ -14,7 +16,6 @@ Use it in your `site.xml`, as explained in
   <skin>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
-    <version>1.3</version>
   </skin>
   [...]
 </project>
@@ -24,7 +25,6 @@ Use it in your `site.xml`, as explained in
 
 If you have any questions about the framework, or something doesn't work as expected,
 please [submit an issue here](https://github.com/jcabi/jcabi-maven-skin/issues/new).
-If you want to discuss, please use our [Google Group](https://groups.google.com/forum/#!forum/jcabi).
 
 ## How to contribute?
 
