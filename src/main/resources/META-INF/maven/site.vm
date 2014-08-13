@@ -91,7 +91,7 @@
                     #end
                     #foreach ($menu in $decoration.body.menus)
                         <li>
-                            ${menu.name}
+                            <span>${menu.name}</span>
                             #if ($menu.items && $menu.items.size() > 0)
                                 <ul>
                                     #foreach ($item in $menu.items)

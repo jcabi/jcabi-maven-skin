@@ -33,12 +33,12 @@
 
 $main-font: 'Maven Pro', sans-serif;
 $code-font: 'Ubuntu Mono', monospace;
-$switch-orientation-point: '1200px';
-$color-black: #111;
-$color-white: #fff;
-$color-gray: #808080;
-$color-gray-light: #d3d3d3;
-$color-gray-lighter: #eee;
+$width: 1200px;
+$black: #111;
+$white: #fff;
+$gray: #808080;
+$gray-light: #d3d3d3;
+$gray-lighter: #eee;
 
 body {
   margin: 0;
@@ -46,50 +46,53 @@ body {
   font-family: $main-font;
   font-size: 1.4em;
   line-height: 1.4em;
-  background-color: $color-gray-light;
-  color: $color-black;
-
-  @media all and (max-width: $switch-orientation-point) {
+  background-color: $gray-light;
+  color: $black;
+  @media all and (max-width: $width) {
     font-size: 1.2em;
     line-height: 1.4em;
-    background-color: $color-white;
+    background-color: $white;
     padding: 0;
   }
 }
 
 a {
   color: inherit;
-  border-bottom: 1px dashed;
-  text-decoration: none;
+  text-decoration: underline;
+  &:hover {
+    color: $gray;
+  }
 }
 
 code, tt {
-  background-color: $color-gray-lighter;
+  background-color: $gray-lighter;
   padding: 0 .5em;
   font-family: $code-font;
 }
 
 h1 {
   font-size: 1.5em;
+  font-variant: small-caps;
 }
 h2 {
   font-size: 1.3em;
+  font-variant: small-caps;
 }
 h3 {
   font-size: 1.1em;
+  font-variant: small-caps;
 }
 
 pre {
-  border-left: 2px solid $color-gray;
+  border-left: 2px solid $gray;
   margin-left: 1em;
-  color: $color-gray;
+  color: $gray;
   padding: 1em;
   font-family: $code-font;
   font-size: 0.9em;
   overflow-x: auto;
   line-height: 1.3em;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     border-left: 0;
     margin-left: 0;
     padding-left: 0;
@@ -97,21 +100,17 @@ pre {
 }
 
 table {
-  background-color: $color-white;
+  background-color: $white;
   border: 0;
   border-collapse: collapse;
-
   tr {
-
     .a {
       background-color: #fcfcfc;
     }
-
     .b {
       background-color: #fafafa;
     }
   }
-
   th {
     background-color: #f2f2f2;
     color: #585858;
@@ -123,11 +122,9 @@ table {
     text-align: left;
     border-bottom: 1px solid #fff;
   }
-
   td {
     vertical-align: top;
     padding: .7em;
-
     &:nth-child(1) {
       width: 30%;
     }
@@ -139,8 +136,7 @@ table {
   margin-right: auto;
   white-space: nowrap;
   width: 90%;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     width: 100%;
   }
 }
@@ -149,34 +145,72 @@ table {
   vertical-align: top;
   display: inline-block;
   width: 30%;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     display: none;
+  }
+  .menu {
+    background-color: $white;
+    padding: 2em 1em 1em;
+    margin-right: 1em;
+    font-size: 1em;
+    line-height: 1.3em;
+    @media all and (max-width: $width) {
+      text-align: center;
+    }
+    & > li {
+      & > span {
+        font-variant: small-caps;
+      }
+      & > ul {
+        margin-bottom: 1em;
+        border-top: 1px solid $gray-light;
+      }
+    }
+    li {
+      font-weight: 700;
+      color: $gray;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      &.active {
+        font-weight: bold;
+      }
+      ul {
+        list-style: none;
+        padding-left: .5em;
+        li {
+          color: $black;
+          font-weight: 400;
+        }
+      }
+    }
+    li {
+      a {
+        text-decoration: none;
+      }
+    }
   }
 }
 
 .date {
-  color: $color-gray;
+  color: $gray;
 }
 
 .legal-notes {
   margin-top: 1em;
-  color: $color-gray;
+  color: $gray;
   font-size: 0.8em;
   line-height: 1em;
   text-align: center;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     display: none;
   }
 }
 
 .content {
-  background-color: $color-white;
+  background-color: $white;
   position: relative;
   padding: 3em;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     padding: 1em;
   }
 }
@@ -185,8 +219,7 @@ table {
   white-space: normal;
   display: inline-block;
   width: 70%;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     width: 100%;
   }
 }
@@ -195,71 +228,19 @@ table {
   float: right;
   font-size: 2em;
   display: none;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     display: block;
   }
 }
 
 .mobile-menu {
   display: none;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     display: block;
   }
 }
 
-.menu {
-  background-color: $color-white;
-  padding: 2em 1em 1em;
-  margin-right: 1em;
-  font-size: 1em;
-  line-height: 1.3em;
-
-  @media all and (max-width: $switch-orientation-point) {
-    text-align: center;
-  }
-
-  & > li > ul {
-    margin-bottom: 1em;
-    border-top: 1px solid $color-gray-light;
-  }
-
-  li {
-    font-weight: 700;
-    color: $color-gray;
-    text-overflow: ellipsis;
-    overflow: hidden;
-
-    &.active {
-      font-weight: bold;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: .5em;
-
-      li {
-        color: $color-black;
-        font-weight: 400;
-     }
-    }
-  }
-
-  li {
-
-    a {
-      border-bottom: 0;
-
-      &:hover {
-        border-bottom: 1px dashed;
-      }
-    }
-  }
-}
-
 .logo {
-
   a {
     border: 0;
   }
@@ -269,8 +250,7 @@ table {
   float: right;
   margin-top: -40px;
   width: 60px;
-
-  @media all and (max-width: $switch-orientation-point) {
+  @media all and (max-width: $width) {
     display: none;
   }
 }
