@@ -7,24 +7,32 @@ assets:
 env:
   MAVEN_OPTS: "-XX:MaxPermSize=256m -Xmx1g"
 
-install:
-  - "sudo gem install pdd"
+install: |
+  sudo gem install pdd
+  # https://github.com/FontCustom/fontcustom
+  sudo apt-get install fontforge
+  wget http://people.mozilla.com/~jkew/woff/woff-code-latest.zip
+  unzip woff-code-latest.zip -d sfnt2woff
+  cd sfnt2woff
+  make
+  sudo mv sfnt2woff /usr/local/bin/
+  sudo gem install fontcustom
 
 merge:
-  script:
-    - "mvn clean install -Pqulice --errors --settings ../settings.xml"
-    - "pdd --source=$(pwd) --verbose --file=/dev/null"
+  script: |
+    mvn clean install -Pqulice --errors --settings ../settings.xml
+    pdd --source=$(pwd) --verbose --file=/dev/null
 
 deploy:
-  script:
-    - "mvn clean deploy -Pqulice --errors --settings ../settings.xml"
-    - "mvn clean"
-    - "pdd --source=$(pwd) --verbose --file=jcabi-maven-skin.xml"
-    - "s3cmd --no-progress put jcabi-maven-skin.xml --config=../s3cfg s3://pdd.teamed.io/jcabi-maven-skin.xml"
+  script: |
+    mvn clean deploy -Pqulice --errors --settings ../settings.xml
+    mvn clean
+    pdd --source=$(pwd) --verbose --file=jcabi-maven-skin.xml
+    s3cmd --no-progress put jcabi-maven-skin.xml --config=../s3cfg s3://pdd.teamed.io/jcabi-maven-skin.xml
 
 release:
-  script:
-    - "mvn versions:set \"-DnewVersion=${tag}\""
-    - "git commit -am \"${tag}\""
-    - "mvn clean deploy -Pqulice -Psonatype -Pjcabi --errors --settings ../settings.xml"
-    - "mvn clean site-deploy -Psite --errors --settings ../settings.xml"
+  script: |
+    mvn versions:set "-DnewVersion=${tag}"
+    git commit -am "${tag}"
+    mvn clean deploy -Pqulice -Psonatype -Pjcabi --errors --settings ../settings.xml
+    mvn clean site-deploy -Psite --errors --settings ../settings.xml

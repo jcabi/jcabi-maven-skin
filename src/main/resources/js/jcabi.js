@@ -28,11 +28,13 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+/*globals $:false, window:false */
+
 $(document).ready(
     function () {
         $('.menu-button').click(
             function() {
-                if ($('#here-goes-menu').attr('class') == 'menu-off') {
+                if ($('#here-goes-menu').attr('class') === 'menu-off') {
                     $('#menu').clone().attr('class', 'mobile-menu').appendTo('#here-goes-menu');
                     $('#here-goes-menu').attr('class', 'menu-on');
                 } else {
