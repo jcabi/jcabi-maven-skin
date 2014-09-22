@@ -41,6 +41,17 @@ $(document).ready(
                 }
             }
         );
+        $('a.ico').click(
+            function (event) {
+                event.preventDefault();
+                var $this = $(this);
+                window.open(
+                    $this.attr('href'),
+                    $this.attr('title'),
+                    'width=640,height=300'
+                );
+            }
+        );
         $('a.ico').each(
             function () {
                 this.href = this.href.replace('URL', encodeURIComponent(window.location));
