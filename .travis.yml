@@ -8,6 +8,7 @@ install: |
   cd sfnt2woff
   make
   mv sfnt2woff /usr/local/bin/
+  cd ..
   gem install fontcustom
 script: |
   mvn clean install -Pqulice
