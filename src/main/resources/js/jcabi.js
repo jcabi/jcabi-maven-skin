@@ -1,6 +1,4 @@
-<?xml version="1.0"?>
-<!--
- *
+/**
  * Copyright (c) 2012-2014, jcabi.com
  * All rights reserved.
  *
@@ -17,7 +15,7 @@
  * permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
+ * 'AS IS' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
  * NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
  * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
  * THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
@@ -28,33 +26,26 @@
  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
- -->
-<project xmlns="http://maven.apache.org/DECORATION/1.3.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd"
-    name="jcabi-maven-skin">
-    <skin>
-        <groupId>com.jcabi</groupId>
-        <artifactId>jcabi-maven-skin</artifactId>
-        <version>1.4</version>
-    </skin>
-    <bannerLeft>
-        <name>jcabi</name>
-        <src>http://img.jcabi.com/logo-square.svg</src>
-        <href>http://skin.jcabi.com/</href>
-        <width>64</width>
-        <height>64</height>
-    </bannerLeft>
-    <googleAnalyticsAccountId>UA-1963507-23</googleAnalyticsAccountId>
-    <body>
-        <head>
-            <link href="http://img.jcabi.com/favicon.ico" rel="shortcut icon"/>
-            <link href="https://plus.google.com/u/0/114792568016408327418?rel=author" rel="author"/>
-        </head>
-        <menu name="Overview">
-            <item name="Introduction" href="./index.html"/>
-            <item name="Release History" href="https://github.com/jcabi/jcabi-maven-skin/releases"/>
-        </menu>
-        <menu ref="reports"/>
-    </body>
-</project>
+ */
+
+$(document).ready(
+    function () {
+        $('.menu-button').click(
+            function() {
+                if ($('#here-goes-menu').attr('class') == 'menu-off') {
+                    $('#menu').clone().attr('class', 'mobile-menu').appendTo('#here-goes-menu');
+                    $('#here-goes-menu').attr('class', 'menu-on');
+                } else {
+                    $('.mobile-menu').hide();
+                    $('#here-goes-menu').attr('class', 'menu-off');
+                }
+            }
+        );
+        $('a.ico').each(
+            function () {
+                this.href = this.href.replace('URL', encodeURIComponent(window.location));
+                this.href = this.href.replace('TITLE', encodeURIComponent($(document).find('title').text()));
+            }
+        );
+    }
+);

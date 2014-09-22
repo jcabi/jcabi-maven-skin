@@ -31,6 +31,31 @@
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
 
+@font-face {
+  font-family: 'ico';
+  src: url('http://img.jcabi.com/fonts/ico.eot');
+  src: url('http://img.jcabi.com/fonts/ico.eot?#iefix') format('embedded-opentype'),
+    url('http://img.jcabi.com/fonts/ico.woff') format('woff'),
+    url('http://img.jcabi.com/fonts/ico.ttf') format('truetype'),
+    url('http://img.jcabi.com/fonts/ico.svg#MonoSocialIconsFont') format('svg');
+  src: url('http://img.jcabi.com/fonts/ico.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.ico {
+  font-family: 'ico';
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
 $main-font: 'Maven Pro', sans-serif;
 $code-font: 'Ubuntu Mono', monospace;
 $width: 1200px;
@@ -220,6 +245,25 @@ table {
       @media all and (max-width: $width) {
         display: inline;
       }
+    }
+  }
+}
+
+.social {
+  a {
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid $gray;
+    color: $gray;
+    width: 1.5 * $em;
+    text-align: center;
+    font-size: 1.5 * $em;
+    padding: .5 * $em;
+    background-color: inherit;
+    &:hover {
+      background-color: $gray;
+      color: white;
     }
   }
 }
