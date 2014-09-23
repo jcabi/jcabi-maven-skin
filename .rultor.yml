@@ -9,7 +9,6 @@ env:
 
 install: |
   sudo gem install pdd
-  # https://github.com/FontCustom/fontcustom
   sudo apt-get install fontforge
   wget http://people.mozilla.com/~jkew/woff/woff-code-latest.zip
   unzip woff-code-latest.zip -d sfnt2woff
