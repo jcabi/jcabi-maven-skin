@@ -67,7 +67,7 @@ MatcherAssert.assertThat(
     /**
      * @todo #86 This validation doesn't work because maven-site-plugin produces
      *  invalid HTML5 output (still using TT element, which is obsolete in
-     * HTML5). We're expecting exactly one error here, because of that.
+     *  HTML5). We're expecting exactly one error here, because of that.
      */
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(1))
 )
