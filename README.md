@@ -27,7 +27,7 @@ Don't forget to install `fontcustom` Ruby gem:
 On Linux/OS X it would be something like:
 
 ```
-$ sudo gem install foncustom
+$ sudo gem install fontcustom
 ```
 
 
