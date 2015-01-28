@@ -22,6 +22,16 @@ Use it in your `site.xml`, as explained in
 </project>
 ```
 
+Don't forget to install `fontcustom` Ruby gem:
+
+On Linux/OS X it would be something like:
+
+```
+$ sudo gem install foncustom
+```
+
+
+
 ## Questions?
 
 If you have any questions about the framework, or something doesn't work as expected,
