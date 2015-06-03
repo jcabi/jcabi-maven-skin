@@ -45,5 +45,4 @@ release:
     git commit -am "${tag}"
     mvn clean deploy -Pqulice -Psonatype -Pjcabi --errors --settings ../settings.xml
     mvn clean site-deploy -Psite --errors --settings ../settings.xml || echo 'site-deploy failed'
-  commanders:
-  - yegor256
+  commanders: []
