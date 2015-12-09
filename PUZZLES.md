@@ -1,6 +1,6 @@
 <md xmlns="http://www.w3.org/1999/xhtml" etag="4-puzzles-xsd/init.xsl">## Puzzles
 
-There are 0 active puzzles (1 total), updated on 2015-12-09T07:09:45Z:
+There are 0 active puzzles (1 total), updated on 2015-12-09T08:40:57Z:
 
 <del>unknown</del> ?
 .<del>86-f6617969</del> src/it/basics/verify.groovy:68-69
