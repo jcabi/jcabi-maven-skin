@@ -70,8 +70,8 @@ MatcherAssert.assertThat(
     htmlResponse.warnings(),
     /**
      * @todo #86 This validation doesn't work because maven-site-plugin produces
-     *  invalid HTML5 output (it is using obsolete attributes on
-     *  some HTML elements). We're expecting exactly six warnings here,
+     *  invalid HTML5 output (it is using an obsolete NAME attribute on
+     *  some HTML elements). We're expecting exactly one warning here,
      *  because of that.
      */
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(6))
