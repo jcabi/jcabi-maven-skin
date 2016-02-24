@@ -62,6 +62,11 @@ MatcherAssert.assertThat(
 )
 
 def htmlResponse = new ValidatorBuilder().html().validate(html)
+/**
+ * If you use <<<fixed width font>>> in index.apt.vm, this test will fail.
+ * Reason: maven-site-plugin doesn't create clean html5.
+ * E.g. It renders <<< >>> as <tt>, which is obsolete and treated as an error.
+ */
 MatcherAssert.assertThat(
     htmlResponse.errors(),
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
