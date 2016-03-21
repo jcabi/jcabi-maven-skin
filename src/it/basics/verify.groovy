@@ -78,8 +78,11 @@ MatcherAssert.assertThat(
      *  invalid HTML5 output (it is using an obsolete NAME attribute on
      *  some HTML elements). We're expecting exactly one warning here,
      *  because of that.
+     *  Most validation error solved. Pending only the one related to
+     *  https://github.com/jcabi/jcabi-w3c/issues/35
+     *  obsolete-interface error.
      */
-    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(6))
+    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(2))
 )
 
 def cssResponse = new ValidatorBuilder().css().validate(

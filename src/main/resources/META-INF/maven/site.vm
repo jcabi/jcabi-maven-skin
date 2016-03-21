@@ -47,7 +47,8 @@
             <a href="${href}" title="${item.name}">${item.name}</a>
         #end
         <section class="page" itemscope="" itemtype="http://schema.org/BlogPosting">
-            <nav class="menu-section" role="navigation">
+            <h2 style="display: none">${project.organization.name}</h2>
+            <nav class="menu-section">
                 <ul class="menu" id="menu">
                     #macro (isExpanded $display $item)
                         #if ($item && $item.items && $item.items.size() > 0)
@@ -88,7 +89,7 @@
                 </ul>
             </nav>
             <div class="right-side">
-                <main role="main">
+                <main>
                     <div class="content">
                         <header>
                             <div class="logo">
@@ -170,7 +171,7 @@
                                 <img src="http://img.jcabi.com/fork-me.svg" class="fork-me"/>
                             </a>
                         #end
-                        <article role="article" itemprop="articleBody">
+                        <article itemprop="articleBody">
                             ${bodyContent}
                         </article>
                     </div>
