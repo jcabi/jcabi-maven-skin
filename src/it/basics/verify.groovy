@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012-2014, jcabi.com
+ * Copyright (c) 2012-2015, jcabi.com
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -62,14 +62,14 @@ MatcherAssert.assertThat(
 )
 
 def htmlResponse = new ValidatorBuilder().html().validate(html)
+/**
+ * If you use <<<fixed width font>>> in index.apt.vm, this test will fail.
+ * Reason: maven-site-plugin doesn't create clean html5.
+ * E.g. It renders <<< >>> as <tt>, which is obsolete and treated as an error.
+ */
 MatcherAssert.assertThat(
     htmlResponse.errors(),
-    /**
-     * @todo #86 This validation doesn't work because maven-site-plugin produces
-     *  invalid HTML5 output (still using TT element, which is obsolete in
-     * HTML5). We're expecting exactly one error here, because of that.
-     */
-    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(1))
+    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
 )
 MatcherAssert.assertThat(
     htmlResponse.warnings(),
@@ -79,7 +79,7 @@ MatcherAssert.assertThat(
      *  some HTML elements). We're expecting exactly one warning here,
      *  because of that.
      */
-    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(2))
+    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(6))
 )
 
 def cssResponse = new ValidatorBuilder().css().validate(

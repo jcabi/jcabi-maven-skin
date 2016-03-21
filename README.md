@@ -38,3 +38,6 @@ Please run Maven build before submitting a pull request:
 ```
 $ mvn clean install -Pqulice
 ```
+
+Make sure you have Maven 3.2+, Java7+ and
+[fontcustom](http://fontcustom.com/) gem installed.
