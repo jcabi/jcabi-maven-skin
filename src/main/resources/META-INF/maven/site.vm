@@ -46,8 +46,7 @@
             #end
             <a href="${href}" title="${item.name}">${item.name}</a>
         #end
-        <section class="page" itemscope="" itemtype="http://schema.org/BlogPosting">
-            <h2 style="display: none">${project.organization.name}</h2>
+        <div class="page" itemscope="" itemtype="http://schema.org/BlogPosting">
             <nav class="menu-section">
                 <ul class="menu" id="menu">
                     #macro (isExpanded $display $item)
@@ -190,6 +189,6 @@
                     <div><a href="http://maven.apache.org/privacy-policy.html">Privacy Policy</a>.</div>
                 </footer>
             </div>
-        </section>
+        </div>
     </body>
 </html>
