@@ -3,16 +3,23 @@ sudo: false
 cache:
   directories:
     - $HOME/.m2
+script:
+  - set -e
+  - mvn clean install -Pqulice --errors --batch-mode
+  - mvn clean
+  - pdd --source=$(pwd) --file=/dev/null
+  - est --dir=est --file=/dev/null
 before_install:
-  - unset GEM_PATH
-install: |
-  apt-get install fontforge
-  wget http://people.mozilla.com/~jkew/woff/woff-code-latest.zip
-  unzip woff-code-latest.zip -d sfnt2woff
-  cd sfnt2woff
-  make
-  mv sfnt2woff /usr/local/bin/
-  cd ..
-  gem install fontcustom
-script: |
-  mvn clean install -Pqulice
+  - rvm install 2.2.2
+  - rvm use 2.2.2
+install:
+  - gem install pdd
+  - gem install est
+env:
+  global:
+    - MAVEN_OPTS="-Xmx256m"
+    - JAVA_OPTS="-Xmx256m"
+jdk:
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk7
