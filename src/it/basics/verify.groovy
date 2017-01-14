@@ -68,21 +68,14 @@ def htmlResponse = new ValidatorBuilder().html().validate(html)
  * E.g. It renders <<< >>> as <tt>, which is obsolete and treated as an error.
  */
 MatcherAssert.assertThat(
+    "There are errors",
     htmlResponse.errors(),
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
 )
 MatcherAssert.assertThat(
+    "There are warnings",
     htmlResponse.warnings(),
-    /**
-     * @todo #86 This validation doesn't work because maven-site-plugin produces
-     *  invalid HTML5 output (it is using an obsolete NAME attribute on
-     *  some HTML elements). We're expecting exactly one warning here,
-     *  because of that.
-     *  Most validation error solved. Pending only the one related to
-     *  https://github.com/jcabi/jcabi-w3c/issues/35
-     *  obsolete-interface error.
-     */
-    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(2))
+    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(1))
 )
 
 def cssResponse = new ValidatorBuilder().css().validate(
