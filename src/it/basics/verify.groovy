@@ -68,12 +68,12 @@ def htmlResponse = new ValidatorBuilder().html().validate(html)
  * E.g. It renders <<< >>> as <tt>, which is obsolete and treated as an error.
  */
 MatcherAssert.assertThat(
-    "There are errors",
+    'There are errors',
     htmlResponse.errors(),
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
 )
 MatcherAssert.assertThat(
-    "There are warnings",
+    'There are warnings',
     htmlResponse.warnings(),
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(1))
 )
