@@ -15,7 +15,7 @@ before_install:
 install:
   - set -e
   - gem install pdd -v 0.20.5
-  - gem install est
+  - gem install est -v 0.3.4
   - sudo apt-get install fontforge
   - wget http://people.mozilla.com/~jkew/woff/woff-code-latest.zip
   - unzip woff-code-latest.zip -d sfnt2woff
