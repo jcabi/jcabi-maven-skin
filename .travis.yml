@@ -14,7 +14,7 @@ before_install:
   - rvm use 2.6.0
 install:
   - set -e
-  - gem install pdd
+  - gem install pdd -v 0.20.5
   - gem install est
   - sudo apt-get install fontforge
   - wget http://people.mozilla.com/~jkew/woff/woff-code-latest.zip
