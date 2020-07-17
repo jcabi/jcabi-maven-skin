@@ -21,9 +21,6 @@
     </bannerLeft>
     <googleAnalyticsAccountId>UA-1963507-23</googleAnalyticsAccountId>
     <body>
-        <head>
-            <link href="http://img.jcabi.com/favicon.ico" rel="shortcut icon"/>
-        </head>
         <breadcrumbs>
             <item name="jcabi.com" href="http://www.jcabi.com"/>
         </breadcrumbs>
