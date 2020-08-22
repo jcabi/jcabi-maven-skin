@@ -28,8 +28,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/*globals $:false, window:false */
-
 $(document).ready(
     function () {
         $('.menu-button').click(
