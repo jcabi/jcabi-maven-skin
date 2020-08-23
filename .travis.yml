@@ -1,4 +1,5 @@
 language: java
+dist: bionic
 sudo: required
 cache:
   directories:
@@ -14,15 +15,10 @@ before_install:
   - rvm use 2.6.0
 install:
   - set -e
+  - sudo apt-get install fontforge
+  - sudo apt-get install sfnt2woff-zopfli woff-tools woff2
   - gem install pdd -v 0.20.5
   - gem install est -v 0.3.4
-  - sudo apt-get install fontforge
-  - wget http://people.mozilla.com/~jkew/woff/woff-code-latest.zip
-  - unzip woff-code-latest.zip -d sfnt2woff
-  - cd sfnt2woff
-  - make
-  - sudo mv sfnt2woff /usr/local/bin/
-  - cd ..
   - gem install fontcustom
 env:
   global:
