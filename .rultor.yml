@@ -3,6 +3,7 @@ architect:
 - dmarkov
 install: |-
   sudo gem install pdd -v 0.20.5
+  sudo apt-get update -y 
   sudo apt-get install -y fontforge
   git clone https://github.com/samboy/WOFF
   cd WOFF
