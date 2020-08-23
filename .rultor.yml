@@ -3,6 +3,7 @@ architect:
 - dmarkov
 install: |-
   sudo gem install pdd -v 0.20.5
+  sudo apt-get update -y 
   sudo apt-get install -y fontforge
   wget http://people.mozilla.com/~jkew/woff/woff-code-latest.zip
   unzip woff-code-latest.zip -d sfnt2woff
