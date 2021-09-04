@@ -4,7 +4,8 @@ install: |-
   git clone https://github.com/samboy/WOFF
   cd WOFF
   make
-  sudo mv ${pwd}/sfnt2woff /usr/local/bin/
+  DIR=${pwd}
+  sudo mv ${DIR}/sfnt2woff /usr/local/bin/
   cd ..
   sudo gem install fontcustom
 assets:
