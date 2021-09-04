@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>${title}</title>
         <link media="all" rel="stylesheet" type="text/css" href="${relativePath}/css/jcabi.css"/>
-        <link media="all" rel="stylesheet" type="text/css" href="${relativePath}/ico/ico.css"/>
         #foreach ($author in $authors)
             <meta name="author" content="${author}" />
         #end
@@ -119,28 +118,6 @@
                                 </li>
                                 <li class="menu-button">menu</li>
                             </ul>
-                            <div class="social">
-                                <a href="http://www.facebook.com/sharer/sharer.php?u=URL"
-                                    title="Share on Facebook" class="ico">
-                                    <i class="icon-facebook"></i>
-                                </a>
-                                <a href="https://twitter.com/share?url=URL&amp;text=TITLE"
-                                    title="Share on Twitter" class="ico">
-                                    <i class="icon-twitter"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/cws/share?url=URL"
-                                    title="Share on LinkedIn" class="ico">
-                                    <i class="icon-linkedin"></i>
-                                </a>
-                                <a href="http://reddit.com/submit?url=URL&amp;title=TITLE"
-                                    title="Share on Reddit" class="ico">
-                                    <i class="icon-reddit"></i>
-                                </a>
-                                <a href="http://news.ycombinator.com/submitlink?u=URL&amp;t=TITLE"
-                                    title="Share on Hacker News" class="ico">
-                                    <i class="icon-hackernews"></i>
-                                </a>
-                            </div>
                         </header>
                         <div id="here-goes-menu" class="menu-off"></div>
                         #set ( $url = $project.scm.connection )

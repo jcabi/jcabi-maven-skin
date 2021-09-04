@@ -1,21 +1,3 @@
-install: |-
-  sudo apt-get update -y
-  sudo apt-get install -y fontforge
-  git clone https://github.com/samboy/WOFF
-  cd WOFF
-  make
-  sudo mv $(pwd)/sfnt2woff /usr/local/bin/
-  cd ..
-
-  sudo gem install fontcustom
-
-  git clone https://github.com/google/woff2.git
-  cd woff2
-  mkdir out
-  cd out
-  cmake ..
-  make
-  sudo make install
 assets:
   secring.gpg: yegor256/home#assets/secring.gpg
   settings.xml: yegor256/home#assets/jcabi/settings.xml
