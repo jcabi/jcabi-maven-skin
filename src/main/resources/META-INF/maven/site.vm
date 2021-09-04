@@ -34,7 +34,7 @@
                 #end
             #end
         #end
-        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
         <script src="${relativePath}/js/jcabi.js"></script>
     </head>
     <body>
@@ -106,11 +106,6 @@
                                     />
                                 </a>
                             </div>
-                            <div class="teamed">
-                                <a href="http://www.teamed.io">
-                                    <img src="http://img.teamed.io/btn.svg" alt="teamed.io logo"/>
-                                </a>
-                            </div>
                             <ul class="badges">
                                 <li>
                                     <strong itemprop="version">${project.version}</strong>
@@ -133,21 +128,9 @@
                                     title="Share on Twitter" class="ico">
                                     <i class="icon-twitter"></i>
                                 </a>
-                                <a href="https://plus.google.com/share?url=URL"
-                                    title="Share on Google+" class="ico">
-                                    <i class="icon-googleplus"></i>
-                                </a>
                                 <a href="https://www.linkedin.com/cws/share?url=URL"
                                     title="Share on LinkedIn" class="ico">
                                     <i class="icon-linkedin"></i>
-                                </a>
-                                <a href="http://www.stumbleupon.com/submit?url=URL&amp;title=TITLE"
-                                    title="Share on StumbleUpon" class="ico">
-                                    <i class="icon-stumbleupon"></i>
-                                </a>
-                                <a href="http://digg.com/submit?phase=2&amp;url=URL&amp;title=TITLE"
-                                    title="Share on Digg" class="ico">
-                                    <i class="icon-digg"></i>
                                 </a>
                                 <a href="http://reddit.com/submit?url=URL&amp;title=TITLE"
                                     title="Share on Reddit" class="ico">
