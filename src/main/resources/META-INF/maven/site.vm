@@ -127,7 +127,7 @@
                             #set ( $owner = $url.substring($pos1, $url.lastIndexOf('/')) )
                             #set ( $repo = $url.substring($pos2, $url.lastIndexOf('.git')) )
                             <a href="https://github.com/${owner}/${repo}">
-                                <img src="http://img.jcabi.com/fork-me.svg" class="fork-me"/>
+                                <img src="https://www.jcabi.com/fork-me.svg" class="fork-me"/>
                             </a>
                         #end
                         <article itemprop="articleBody">
