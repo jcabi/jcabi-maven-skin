@@ -1,216 +1,214 @@
 <?xml version="1.0"?>
 <!--
- * Copyright (c) 2012-2021, jcabi.com
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met: 1) Redistributions of source code must retain the above
- * copyright notice, this list of conditions and the following
- * disclaimer. 2) Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following
- * disclaimer in the documentation and/or other materials provided
- * with the distribution. 3) Neither the name of the jcabi.com nor
- * the names of its contributors may be used to endorse or promote
- * products derived from this software without specific prior written
- * permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
- * NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
- * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
- * THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
- * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
- * OF THE POSSIBILITY OF SUCH DAMAGE.
- -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.jcabi</groupId>
-        <artifactId>jcabi</artifactId>
-        <version>1.18</version>
-    </parent>
-    <artifactId>jcabi-maven-skin</artifactId>
-    <version>2.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>jcabi-maven-skin</name>
-    <description>jcabi Maven Skin</description>
-    <issueManagement>
-        <system>github</system>
-        <url>https://github.com/jcabi/jcabi-maven-skin/issues</url>
-    </issueManagement>
-    <ciManagement>
-        <system>travis</system>
-        <url>https://travis-ci.org/jcabi/jcabi-maven-skin</url>
-    </ciManagement>
-    <scm>
-        <connection>scm:git:github.com:jcabi/jcabi-maven-skin.git</connection>
-        <developerConnection>scm:git:github.com:jcabi/jcabi-maven-skin.git</developerConnection>
-        <url>https://github.com/jcabi/jcabi-maven-skin</url>
-    </scm>
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <configuration>
-                        <delimiters>
-                            <delimiter>@</delimiter>
-                        </delimiters>
-                        <useDefaultDelimiters>false</useDefaultDelimiters>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+Copyright (c) 2012-2021, jcabi.com
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met: 1) Redistributions of source code must retain the above
+copyright notice, this list of conditions and the following
+disclaimer. 2) Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following
+disclaimer in the documentation and/or other materials provided
+with the distribution. 3) Neither the name of the jcabi.com nor
+the names of its contributors may be used to endorse or promote
+products derived from this software without specific prior written
+permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.jcabi</groupId>
+    <artifactId>jcabi</artifactId>
+    <version>1.27.0</version>
+  </parent>
+  <artifactId>jcabi-maven-skin</artifactId>
+  <version>2.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>jcabi-maven-skin</name>
+  <description>jcabi Maven Skin</description>
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/jcabi/jcabi-maven-skin/issues</url>
+  </issueManagement>
+  <ciManagement>
+    <system>travis</system>
+    <url>https://travis-ci.org/jcabi/jcabi-maven-skin</url>
+  </ciManagement>
+  <scm>
+    <connection>scm:git:github.com:jcabi/jcabi-maven-skin.git</connection>
+    <developerConnection>scm:git:github.com:jcabi/jcabi-maven-skin.git</developerConnection>
+    <url>https://github.com/jcabi/jcabi-maven-skin</url>
+  </scm>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <configuration>
+            <delimiters>
+              <delimiter>@</delimiter>
+            </delimiters>
+            <useDefaultDelimiters>false</useDefaultDelimiters>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.3</version>
+        <executions>
+          <execution>
+            <id>fontcustom</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>fontcustom</executable>
+              <workingDirectory>${project.build.directory}</workingDirectory>
+              <arguments>
+                <argument>compile</argument>
+                <argument>--output=${project.build.outputDirectory}/ico</argument>
+                <argument>--no_hash=true</argument>
+                <argument>--font_name=ico</argument>
+                <argument>--templates=css</argument>
+                <argument>--autowidth=true</argument>
+                <argument>${basedir}/src/main/glyphs</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>nl.geodienstencentrum.maven</groupId>
+        <artifactId>sass-maven-plugin</artifactId>
+        <version>2.15</version>
+        <executions>
+          <execution>
+            <id>generate-css</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>update-stylesheets</goal>
+            </goals>
+            <configuration>
+              <sassSourceDirectory>${basedir}/src/main/scss</sassSourceDirectory>
+              <destination>${project.build.directory}/css</destination>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.samaxes.maven</groupId>
+        <artifactId>minify-maven-plugin</artifactId>
+        <version>1.7.2</version>
+        <configuration>
+          <charset>UTF-8</charset>
+          <nosuffix>true</nosuffix>
+          <webappTargetDir>${project.build.outputDirectory}</webappTargetDir>
+        </configuration>
+        <executions>
+          <execution>
+            <id>minify-js</id>
+            <goals>
+              <goal>minify</goal>
+            </goals>
+            <configuration>
+              <webappSourceDir>${basedir}/src/main/resources</webappSourceDir>
+              <jsSourceIncludes>
+                <include>*.js</include>
+              </jsSourceIncludes>
+              <jsEngine>CLOSURE</jsEngine>
+              <skipMerge>true</skipMerge>
+              <skipMinify>false</skipMinify>
+            </configuration>
+          </execution>
+          <execution>
+            <id>minify-css</id>
+            <goals>
+              <goal>minify</goal>
+            </goals>
+            <configuration>
+              <webappSourceDir>${project.build.directory}</webappSourceDir>
+              <cssSourceDir>css</cssSourceDir>
+              <cssSourceIncludes>
+                <include>*.css</include>
+              </cssSourceIncludes>
+              <skipMerge>true</skipMerge>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-invoker-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>com.jcabi</groupId>
+            <artifactId>jcabi-matchers</artifactId>
+            <version>1.4</version>
+          </dependency>
+          <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+          </dependency>
+          <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.0.4</version>
+          </dependency>
+          <dependency>
+            <groupId>com.jcabi</groupId>
+            <artifactId>jcabi-w3c</artifactId>
+            <version>1.3</version>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.18.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>1.3</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>qulice</id>
+      <build>
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.3</version>
-                <executions>
-                    <execution>
-                        <id>fontcustom</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>fontcustom</executable>
-                            <workingDirectory>${project.build.directory}</workingDirectory>
-                            <arguments>
-                                <argument>compile</argument>
-                                <argument>--output=${project.build.outputDirectory}/ico</argument>
-                                <argument>--no_hash=true</argument>
-                                <argument>--font_name=ico</argument>
-                                <argument>--templates=css</argument>
-                                <argument>--autowidth=true</argument>
-                                <argument>${basedir}/src/main/glyphs</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>nl.geodienstencentrum.maven</groupId>
-                <artifactId>sass-maven-plugin</artifactId>
-                <version>2.5</version>
-                <executions>
-                    <execution>
-                        <id>generate-css</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>update-stylesheets</goal>
-                        </goals>
-                        <configuration>
-                            <sassSourceDirectory>${basedir}/src/main/scss</sassSourceDirectory>
-                            <destination>${project.build.directory}/css</destination>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.samaxes.maven</groupId>
-                <artifactId>minify-maven-plugin</artifactId>
-                <version>1.7.2</version>
-                <configuration>
-                    <charset>UTF-8</charset>
-                    <nosuffix>true</nosuffix>
-                    <webappTargetDir>${project.build.outputDirectory}</webappTargetDir>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>minify-js</id>
-                        <goals>
-                            <goal>minify</goal>
-                        </goals>
-                        <configuration>
-                            <webappSourceDir>${basedir}/src/main/resources</webappSourceDir>
-                            <jsSourceIncludes>
-                                <include>*.js</include>
-                            </jsSourceIncludes>
-                            <jsEngine>CLOSURE</jsEngine>
-                            <skipMerge>true</skipMerge>
-                            <skipMinify>false</skipMinify>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>minify-css</id>
-                        <goals>
-                            <goal>minify</goal>
-                        </goals>
-                        <configuration>
-                            <webappSourceDir>${project.build.directory}</webappSourceDir>
-                            <cssSourceDir>css</cssSourceDir>
-                            <cssSourceIncludes>
-                                <include>*.css</include>
-                            </cssSourceIncludes>
-                            <skipMerge>true</skipMerge>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-invoker-plugin</artifactId>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.jcabi</groupId>
-                        <artifactId>jcabi-matchers</artifactId>
-                        <version>1.4</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>commons-io</groupId>
-                        <artifactId>commons-io</artifactId>
-                        <version>2.4</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.glassfish</groupId>
-                        <artifactId>javax.json</artifactId>
-                        <version>1.0.4</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.jcabi</groupId>
-                        <artifactId>jcabi-w3c</artifactId>
-                        <version>1.3</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.sun.jersey</groupId>
-                        <artifactId>jersey-client</artifactId>
-                        <version>1.18.1</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.hamcrest</groupId>
-                        <artifactId>hamcrest-core</artifactId>
-                        <version>1.3</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+          <plugin>
+            <groupId>com.qulice</groupId>
+            <artifactId>qulice-maven-plugin</artifactId>
+            <configuration>
+              <excludes combine.children="append">
+                <exclude>checkstyle:/src/main/resources/images/.*</exclude>
+                <exclude>checkstyle:/src/main/resources/js/.*</exclude>
+                <exclude>xml:/src/it/settings.xml</exclude>
+              </excludes>
+            </configuration>
+          </plugin>
         </plugins>
-    </build>
-    <profiles>
-        <profile>
-            <id>qulice</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.qulice</groupId>
-                        <artifactId>qulice-maven-plugin</artifactId>
-                        <configuration>
-                            <excludes>
-                                <exclude>checkstyle:/src/main/resources/images/.*</exclude>
-                                <exclude>checkstyle:/src/main/resources/js/.*</exclude>
-                                <exclude>xml:/src/it/settings.xml</exclude>
-                            </excludes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+      </build>
+    </profile>
+  </profiles>
 </project>
