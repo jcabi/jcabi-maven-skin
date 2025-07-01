@@ -33,7 +33,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
   <parent>
     <groupId>com.jcabi</groupId>
     <artifactId>parent</artifactId>
-    <version>0.17</version>
+    <version>0.69.6</version>
   </parent>
   <artifactId>jcabi-test-basics</artifactId>
   <name>basics</name>
