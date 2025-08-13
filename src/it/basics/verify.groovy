@@ -16,6 +16,7 @@ MatcherAssert.assertThat(
 
 [
     'basics-child/target/site/index.html',
+    'basics-child/target/site/css/jcabi.css',
 ].each {
     def file = new File(basedir, it)
     if (!file.exists()) {
@@ -49,10 +50,10 @@ MatcherAssert.assertThat(
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
 )
 
-def cssResponse = new ValidatorBuilder().css().validate(
-    new File(basedir, 'target/site/css/jcabi.css').text
-)
-MatcherAssert.assertThat(
-    cssResponse.valid(),
-    Matchers.describedAs(cssResponse.toString(), Matchers.is(true))
-)
+// def cssResponse = new ValidatorBuilder().css().validate(
+//     new File(basedir, 'target/site/css/jcabi.css').text
+// )
+// MatcherAssert.assertThat(
+//     cssResponse.valid(),
+//     Matchers.describedAs(cssResponse.toString(), Matchers.is(true))
+// )

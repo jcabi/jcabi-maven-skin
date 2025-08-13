@@ -73,7 +73,7 @@
           <dependency>
             <groupId>com.jcabi</groupId>
             <artifactId>jcabi-matchers</artifactId>
-            <version>1.4</version>
+            <version>1.8.0</version>
           </dependency>
           <dependency>
             <groupId>commons-io</groupId>
@@ -114,6 +114,10 @@
             <artifactId>qulice-maven-plugin</artifactId>
             <configuration>
               <excludes combine.children="append">
+                <exclude>checkstyle:/src/main/glyphs/.*</exclude>
+                <exclude>checkstyle:/src/it/.*</exclude>
+                <exclude>checkstyle:/src/site/apt/index.apt.vm</exclude>
+                <exclude>checkstyle:/src/main/resources/META-INF/maven/site.vm</exclude>
                 <exclude>checkstyle:/src/main/resources/images/.*</exclude>
                 <exclude>checkstyle:/src/main/resources/js/.*</exclude>
                 <exclude>xml:/src/it/settings.xml</exclude>
