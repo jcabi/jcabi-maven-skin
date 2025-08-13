@@ -8,7 +8,7 @@
   <parent>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi</artifactId>
-    <version>1.27.0</version>
+    <version>1.39.0</version>
   </parent>
   <artifactId>jcabi-maven-skin</artifactId>
   <version>2.0-SNAPSHOT</version>
@@ -32,6 +32,12 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+        <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <configuration>
             <delimiters>
@@ -46,7 +52,7 @@
       <plugin>
         <groupId>nl.geodienstencentrum.maven</groupId>
         <artifactId>sass-maven-plugin</artifactId>
-        <version>2.15</version>
+        <version>3.7.2</version>
         <executions>
           <execution>
             <id>generate-css</id>
@@ -57,47 +63,6 @@
             <configuration>
               <sassSourceDirectory>${basedir}/src/main/scss</sassSourceDirectory>
               <destination>${project.build.directory}/css</destination>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>com.samaxes.maven</groupId>
-        <artifactId>minify-maven-plugin</artifactId>
-        <version>1.7.2</version>
-        <configuration>
-          <charset>UTF-8</charset>
-          <nosuffix>true</nosuffix>
-          <webappTargetDir>${project.build.outputDirectory}</webappTargetDir>
-        </configuration>
-        <executions>
-          <execution>
-            <id>minify-js</id>
-            <goals>
-              <goal>minify</goal>
-            </goals>
-            <configuration>
-              <webappSourceDir>${basedir}/src/main/resources</webappSourceDir>
-              <jsSourceIncludes>
-                <include>*.js</include>
-              </jsSourceIncludes>
-              <jsEngine>CLOSURE</jsEngine>
-              <skipMerge>true</skipMerge>
-              <skipMinify>false</skipMinify>
-            </configuration>
-          </execution>
-          <execution>
-            <id>minify-css</id>
-            <goals>
-              <goal>minify</goal>
-            </goals>
-            <configuration>
-              <webappSourceDir>${project.build.directory}</webappSourceDir>
-              <cssSourceDir>css</cssSourceDir>
-              <cssSourceIncludes>
-                <include>*.css</include>
-              </cssSourceIncludes>
-              <skipMerge>true</skipMerge>
             </configuration>
           </execution>
         </executions>
