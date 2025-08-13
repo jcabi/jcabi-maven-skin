@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 ---
 name: xcop
-"on":
+'on':
   push:
     branches:
       - master

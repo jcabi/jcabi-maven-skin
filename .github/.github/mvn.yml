@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 ---
 name: mvn
-"on":
+'on':
   push:
     branches:
       - master
