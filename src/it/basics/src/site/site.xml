@@ -8,15 +8,15 @@
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
     <!--
-        Would be nice to have an ability to use @project.version@ here
-        http://jira.codehaus.org/browse/MINVOKER-148
-        -->
+      Would be nice to have an ability to use @project.version@ here
+      http://jira.codehaus.org/browse/MINVOKER-148
+    -->
     <version>${project.version}</version>
   </skin>
   <bannerLeft>
     <name>jcabi</name>
-    <src>http://img.jcabi.com/logo-square.png</src>
-    <href>http://www.jcabi.com/</href>
+    <src>https://img.jcabi.com/logo-square.png</src>
+    <href>https://www.jcabi.com/</href>
     <width>48</width>
     <height>48</height>
   </bannerLeft>

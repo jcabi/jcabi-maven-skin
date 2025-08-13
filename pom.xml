@@ -62,7 +62,7 @@
             </goals>
             <configuration>
               <sassSourceDirectory>${basedir}/src/main/scss</sassSourceDirectory>
-              <destination>${project.build.directory}/css</destination>
+              <destination>${project.build.outputDirectory}/css</destination>
             </configuration>
           </execution>
         </executions>

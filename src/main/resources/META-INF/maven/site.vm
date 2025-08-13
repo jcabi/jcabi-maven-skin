@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
     <head>
         <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>${title}</title>
         <link media="all" rel="stylesheet" type="text/css" href="${relativePath}/css/jcabi.css"/>
         #foreach ($author in $authors)
-            <meta name="author" content="${author}" />
+            <meta name="author" content="${author}"/>
         #end
         #if ($decoration.googleAnalyticsAccountId)
             <script>
@@ -146,7 +146,7 @@
                         #end
                     </div>
                     <div>${project.organization.name}, All Rights Reserved.</div>
-                    <div><a href="http://maven.apache.org/privacy-policy.html">Privacy Policy</a>.</div>
+                    <div><a href="https://maven.apache.org/privacy-policy.html">Privacy Policy</a>.</div>
                 </footer>
             </div>
         </div>
