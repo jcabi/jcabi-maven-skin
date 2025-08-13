@@ -1,7 +1,9 @@
 .DS_Store
+.idea/
 *.iml
-target/
-/bin/
-/.settings/
 /.classpath
 /.project
+/.settings/
+/bin/
+node_modules/
+target/
