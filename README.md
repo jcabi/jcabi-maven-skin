@@ -44,4 +44,4 @@ mvn clean install -Pqulice
 Make sure you have Maven 3.2+, Java7+ and
 [fontcustom](http://fontcustom.com/) gem installed.
 
-[skinnig]: http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html#Skinning
+[skinning]: http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html#Skinning
