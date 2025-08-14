@@ -3,19 +3,9 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>jcabi-maven-skin &#x2013; Generated Reports</title>
+        <title>Generated Reports – jcabi-maven-skin</title>
         <link media="all" rel="stylesheet" type="text/css" href="./css/jcabi.css"/>
-                            <script>
-                var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', 'UA-1963507-23']);
-                _gaq.push(['_trackPageview']);
-                (function() {
-                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                })();
-            </script>
-                                            <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+                                                    <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
         <script src="./js/jcabi.js"></script>
     </head>
     <body>
@@ -45,7 +35,7 @@
                                                                                                     <li >
                             <span>                        <a href="project-info.html" title="Project Information">Project Information</a>
         </span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </li>
                                                                                                                         <li >
                             <span>                        <a href="project-reports.html" title="Project Reports">Project Reports</a>
         </span>
@@ -59,25 +49,23 @@
                     <div class="content">
                         <header>
                             <div class="logo">
-                                <a href="http://skin.jcabi.com/"
+                                <a href="https://skin.jcabi.com/"
                                     title=" logo ">
-                                    <img src="https://www.jcabi.com/logo-square.svg"
+                                    <img src="${decoration.bannerLeft.src}"
                                         alt="jcabi"
-                                                                                    width="64"
-                                                                                                                            height="64"
-                                                                                itemprop="image"
+                                                                                                                        itemprop="image"
                                     />
                                 </a>
                             </div>
                             <ul class="badges">
                                 <li>
-                                    <strong itemprop="version">1.7.1</strong>
+                                    <strong itemprop="version">1.8.1</strong>
                                 </li>
                                 <li>
-                                    
-                                    <time itemprop="datePublished" datetime="2021-09-04T10:51:39Z">
-                                        
-                                        04-Sep-2021
+                                    $dateFormat.applyPattern("yyyy-MM-dd'T'hh:mm:ss'Z'")
+                                    <time itemprop="datePublished" datetime="${dateFormat.format($currentDate)}">
+                                        $dateFormat.applyPattern('dd-MMM-yyyy')
+                                        ${dateFormat.format($currentDate)}
                                     </time>
                                 </li>
                                 <li class="menu-button">menu</li>
@@ -89,15 +77,15 @@
                             </a>
                                                 <article itemprop="articleBody">
                             <section>
-<h2><a name="Generated_Reports"></a>Generated Reports</h2>
-<p>This document provides an overview of the various reports that are automatically generated by <a class="externalLink" href="http://maven.apache.org">Maven</a> . Each report is briefly described below.</p><section>
-<h3><a name="Overview"></a>Overview</h3>
-<table border="0" class="bodyTable">
+<h1>Generated Reports</h1>
+<p>This document provides an overview of the various reports that are automatically generated by <a class="externalLink" href="https://maven.apache.org">Maven</a> . Each report is briefly described below.</p><section>
+<h2>Overview</h2>
+<table class="bodyTable">
 <tr class="a">
 <th>Document</th>
 <th>Description</th></tr>
 <tr class="b">
-<td><a href="surefire-report.html">Surefire Report</a></td>
+<td><a href="surefire.html">Surefire</a></td>
 <td>Report on the test results of the project.</td></tr>
 <tr class="a">
 <td><a href="dependency-updates-report.html">Dependency Updates Report</a></td>
@@ -114,7 +102,7 @@
                 <footer class="legal-notes">
                     <div>
                         Copyright &#169;
-                                                                            2012-2021
+                                                                            2012-${currentYear}
                                             </div>
                     <div>jcabi.com, All Rights Reserved.</div>
                     <div><a href="http://maven.apache.org/privacy-policy.html">Privacy Policy</a>.</div>
