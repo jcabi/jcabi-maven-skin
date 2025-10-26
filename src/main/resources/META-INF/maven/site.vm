@@ -92,17 +92,18 @@
                         <header>
                             <div class="logo">
                                 <a href="${decoration.bannerLeft.href}"
-                                    title="#if ($decoration.bannerLeft.title) ${decoration.bannerLeft.title} #else logo #end">
-                                    <img src="${decoration.bannerLeft.src}"
-                                        alt="${decoration.bannerLeft.name}"
-                                        #if (${decoration.bannerLeft.width})
-                                            width="${decoration.bannerLeft.width}"
+                                    title="#if ($decoration.bannerLeft.name) ${decoration.bannerLeft.name} #else logo #end">
+                                    #if (${decoration.bannerLeft.image.src})
+                                    <img src="${decoration.bannerLeft.image.src}"
+                                        alt="${decoration.bannerLeft.image.alt}"
+                                        #if (${decoration.bannerLeft.image.width})
+                                            width="${decoration.bannerLeft.image.width}"
                                         #end
-                                        #if (${decoration.bannerLeft.height})
-                                            height="${decoration.bannerLeft.height}"
+                                        #if (${decoration.bannerLeft.image.height})
+                                            height="${decoration.bannerLeft.image.height}"
                                         #end
                                         itemprop="image"
-                                    />
+                                    />#end
                                 </a>
                             </div>
                             <ul class="badges">
