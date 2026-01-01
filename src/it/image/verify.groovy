@@ -24,4 +24,3 @@ MatcherAssert.assertThat(
         '//xhtml:img[@src="../../favicon.ico"]',
     )
 )
-
