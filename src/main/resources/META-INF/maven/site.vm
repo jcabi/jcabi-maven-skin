@@ -94,13 +94,13 @@
                             <div class="logo">
                                 <a href="${decoration.bannerLeft.href}"
                                     title="#if ($decoration.bannerLeft.name) ${decoration.bannerLeft.name} #else logo #end">
-                                    #if (${decoration.bannerLeft.image.src})
+                                    #if ($decoration.bannerLeft.image)
                                     <img src="${decoration.bannerLeft.image.src}"
-                                        alt="${decoration.bannerLeft.image.alt}"
-                                        #if (${decoration.bannerLeft.image.width})
+                                        alt="$!{decoration.bannerLeft.image.alt}"
+                                        #if ($decoration.bannerLeft.image.width)
                                             width="${decoration.bannerLeft.image.width}"
                                         #end
-                                        #if (${decoration.bannerLeft.image.height})
+                                        #if ($decoration.bannerLeft.image.height)
                                             height="${decoration.bannerLeft.image.height}"
                                         #end
                                         itemprop="image"
@@ -111,13 +111,13 @@
                                 <li>
                                     <strong itemprop="version">${project.version}</strong>
                                 </li>
+                                #if ($currentDate)
                                 <li>
-                                    $dateFormat.applyPattern("yyyy-MM-dd'T'hh:mm:ss'Z'")
-                                    <time itemprop="datePublished" datetime="${dateFormat.format($currentDate)}">
-                                        $dateFormat.applyPattern('d-MMM-yyyy')
-                                        ${dateFormat.format($currentDate)}
+                                    <time itemprop="datePublished" datetime="$currentDate.toInstant().toString()">
+                                        $dateFormat.format($currentDate)
                                     </time>
                                 </li>
+                                #end
                                 <li class="menu-button">menu</li>
                             </ul>
                         </header>
@@ -140,12 +140,17 @@
                 <footer class="legal-notes">
                     <div>
                         Copyright &#169;
-                        $dateFormat.applyPattern('yyyy')
-                        #set ($currentYear = $dateFormat.format($currentDate))
-                        #if (${project.inceptionYear} && ${project.inceptionYear} != ${currentYear})
-                            ${project.inceptionYear}-${currentYear}
+                        #if ($currentDate)
+                            #set ($currentYear = $currentDate.getYear() + 1900)
+                            #if (${project.inceptionYear} && ${project.inceptionYear} != ${currentYear})
+                                ${project.inceptionYear}-${currentYear}
+                            #else
+                                ${currentYear}
+                            #end
                         #else
-                            ${currentYear}
+                            #if (${project.inceptionYear})
+                                ${project.inceptionYear}
+                            #end
                         #end
                     </div>
                     <div>${project.organization.name}, All Rights Reserved.</div>

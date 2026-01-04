@@ -22,9 +22,9 @@ doc.outputSettings().syntax(Document.OutputSettings.Syntax.xml)
 def xhtml = doc.html()
 def version = new XmlParser().parse(new File(basedir, 'pom.xml')).version.text()
 MatcherAssert.assertThat(
-    "HTML must contain favicon link, the link is relative to the site root",
+    "HTML must contain banner image",
     xhtml,
     XhtmlMatchers.hasXPaths(
-        '//xhtml:img[@src="../../favicon.ico"]',
+        '//xhtml:img[@src="../../favicon.ico"]'
     )
 )

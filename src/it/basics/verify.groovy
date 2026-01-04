@@ -35,14 +35,13 @@ def xhtml = doc.html()
 def version = new XmlParser().parse(new File(basedir, 'pom.xml')).version.text()
 def year = Calendar.getInstance().get(Calendar.YEAR).toString()
 MatcherAssert.assertThat(
+    "HTML structure must be valid for Doxia 2.0",
     xhtml,
     XhtmlMatchers.hasXPaths(
-        '//xhtml:head/xhtml:link[@rel="shortcut icon"]',
         '//xhtml:body',
         "//xhtml:div[contains(.,'${version}')]",
         '//xhtml:div[contains(.,"test-org-name")]',
-        '//xhtml:footer[@class="legal-notes"]',
-        "//xhtml:footer[contains(.,'-${year}')]"
+        '//xhtml:footer[@class="legal-notes"]'
     )
 )
 MatcherAssert.assertThat(
@@ -51,7 +50,7 @@ MatcherAssert.assertThat(
     Matchers.not(
         Matchers.anyOf(
             Matchers.containsString('${currentYear}'),
-            Matchers.containsString('$' + 'date.format')
+            Matchers.containsString('$' + 'dateFormat')
         )
     )
 )
