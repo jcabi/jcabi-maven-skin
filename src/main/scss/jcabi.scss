@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-@import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@import "https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700";
+@import "https://fonts.googleapis.com/css?family=Ubuntu+Mono";
 
 $main-font: 'Maven Pro', sans-serif;
 $code-font: 'Ubuntu Mono', monospace;
@@ -24,6 +24,7 @@ body {
   line-height: 1.3 * $em;
   background-color: $gray-light;
   color: $black;
+
   @media all and (max-width: $width) {
     font-size: .8 * $em;
     line-height: 1 * $em;
@@ -35,6 +36,7 @@ body {
 a {
   color: inherit;
   text-decoration: underline;
+
   &:hover {
     color: $gray;
   }
@@ -51,11 +53,13 @@ h1 {
   line-height: 1.9 * $em;
   font-variant: small-caps;
 }
+
 h2 {
   font-size: 1.7 * $em;
   line-height: 1.7 * $em;
   font-variant: small-caps;
 }
+
 h3 {
   font-size: 1.5 * $em;
   line-height: 1.5 * $em;
@@ -71,6 +75,7 @@ pre {
   font-size: .9 * $em;
   overflow-x: auto;
   line-height: $em;
+
   @media all and (max-width: $width) {
     border-left: 0;
     margin-left: 0;
@@ -82,14 +87,17 @@ table {
   background-color: $white;
   border: 0;
   border-collapse: collapse;
+
   tr {
     .a {
       background-color: #fcfcfc;
     }
+
     .b {
       background-color: #fafafa;
     }
   }
+
   th {
     background-color: #f2f2f2;
     color: #585858;
@@ -100,9 +108,11 @@ table {
     text-align: left;
     border-bottom: 1px solid #fff;
   }
+
   td {
     vertical-align: top;
     padding: .7 * $em;
+
     &:nth-child(1) {
       width: 30%;
     }
@@ -114,6 +124,7 @@ table {
   margin-right: auto;
   white-space: nowrap;
   width: 90%;
+
   @media all and (max-width: $width) {
     width: 100%;
   }
@@ -123,44 +134,54 @@ table {
   vertical-align: top;
   display: inline-block;
   width: 30%;
+
   @media all and (max-width: $width) {
     display: none;
   }
+
   .menu {
     background-color: $white;
     padding: 2 * $em $em $em;
     margin-right: $em;
     font-size: $em;
     line-height: 1.3 * $em;
+
     @media all and (max-width: $width) {
       text-align: center;
     }
+
     & > li {
       & > span {
         font-variant: small-caps;
       }
+
       & > ul {
         margin-bottom: $em;
         border-top: 1px solid $gray-light;
       }
     }
+
     li {
       font-weight: 700;
       color: $gray;
       text-overflow: ellipsis;
       overflow: hidden;
+
       &.active {
         font-weight: bold;
       }
+
       ul {
         list-style: none;
         padding-left: .5 * $em;
+
         li {
           color: $black;
           font-weight: 400;
         }
       }
     }
+
     li {
       a {
         text-decoration: none;
@@ -175,19 +196,23 @@ table {
   list-style: none;
   padding-left: 0;
   font-size: .8 * $em;
+
   li {
     display: inline;
     border: 1px solid $gray;
     border-radius: 3px;
     padding: .2 * $em;
     margin-right: .6 * $em;
+
     &.menu-button {
       display: none;
       cursor: pointer;
+
       &:hover {
         background-color: $gray;
         color: white;
       }
+
       @media all and (max-width: $width) {
         display: inline;
       }
@@ -201,6 +226,7 @@ table {
   font-size: .8 * $em;
   line-height: $em;
   text-align: center;
+
   @media all and (max-width: $width) {
     display: none;
   }
@@ -210,6 +236,7 @@ table {
   background-color: $white;
   position: relative;
   padding: 3 * $em;
+
   @media all and (max-width: $width) {
     padding: $em;
   }
@@ -227,6 +254,7 @@ table {
   white-space: normal;
   display: inline-block;
   width: 70%;
+
   @media all and (max-width: $width) {
     width: 100%;
   }
@@ -234,6 +262,7 @@ table {
 
 .mobile-menu {
   display: none;
+
   @media all and (max-width: $width) {
     display: block;
   }
