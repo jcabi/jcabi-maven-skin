@@ -101,13 +101,11 @@
                                 <li>
                                     <strong itemprop="version">${project.version}</strong>
                                 </li>
-                                #if ($currentDate)
                                 <li>
-                                    <time itemprop="datePublished" datetime="$currentDate.toInstant().toString()">
-                                        $dateFormat.format($currentDate)
+                                    <time itemprop="datePublished" datetime="$date.get('yyyy-MM-dd')">
+                                        $date.format('d-MMM-yyyy')
                                     </time>
                                 </li>
-                                #end
                                 <li class="menu-button">menu</li>
                             </ul>
                         </header>
