@@ -17,4 +17,12 @@
   <organization>
     <name>test-org-name</name>
   </organization>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.21.0</version>
+      </plugin>
+    </plugins>
+  </build>
 </project>

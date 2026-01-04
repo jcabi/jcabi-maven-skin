@@ -18,8 +18,8 @@
   </bannerLeft>
   <body>
     <head>
-        &lt;link href="https://www.jcabi.com/favicon.ico" rel="shortcut icon"/&gt;
-      </head>
+      &lt;link href="https://www.jcabi.com/favicon.ico" rel="shortcut icon"/&gt;
+    </head>
     <breadcrumbs>
       <item name="jcabi.com" href="http://www.jcabi.com"/>
     </breadcrumbs>
