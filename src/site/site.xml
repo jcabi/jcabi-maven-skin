@@ -12,6 +12,7 @@
   <custom>
     <jcabi>
       <favicon>https://www.jcabi.com/favicon.ico</favicon>
+      <googleAnalyticsId>UA-1963507-23</googleAnalyticsId>
     </jcabi>
   </custom>
   <bannerLeft name="jcabi-maven-skin" href="https://skin.jcabi.com/">
