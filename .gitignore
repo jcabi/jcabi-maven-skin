@@ -1,10 +1,11 @@
+*.iml
+.aidy/
+.claude/
 .DS_Store
 .idea/
-*.iml
 /.classpath
 /.project
 /.settings/
 /bin/
 node_modules/
 target/
-.aidy/

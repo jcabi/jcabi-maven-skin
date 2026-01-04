@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>${title}</title>
-        <link media="all" rel="stylesheet" type="text/css" href="${relativePath}/css/jcabi.css"/>
+        <link media="all" rel="stylesheet" type="text/css" href="${relativePath}/css/jcabi.css">
         #foreach ($author in $authors)
-            <meta name="author" content="${author}"/>
+            <meta name="author" content="${author}">
         #end
         #if ($decoration.googleAnalyticsAccountId)
             <script>
@@ -27,13 +27,14 @@
                 ## @see org.codehaus.plexus.util.xml.Xpp3Dom#toUnescapedString()
                 #set ($documentHeader = '<?xml version="1.0" encoding="UTF-8"?>')
                 #if ($item.name == "script")
-                    $StringUtils.replace($item.toUnescapedString(), $documentHeader, "")
+                    #set ($headItem = $StringUtils.replace($item.toUnescapedString(), $documentHeader, ""))
                 #else
-                    $StringUtils.replace($item.toString(), $documentHeader, "")
+                    #set ($headItem = $StringUtils.replace($item.toString(), $documentHeader, ""))
                 #end
+                $headItem.replaceAll(" */>$", ">")
             #end
         #end
-        <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin=anonymous></script>
         <script src="${relativePath}/js/jcabi.js"></script>
     </head>
     <body>
@@ -103,7 +104,7 @@
                                             height="${decoration.bannerLeft.image.height}"
                                         #end
                                         itemprop="image"
-                                    />#end
+                                    >#end
                                 </a>
                             </div>
                             <ul class="badges">
@@ -128,7 +129,7 @@
                             #set ( $owner = $url.substring($pos1, $url.lastIndexOf('/')) )
                             #set ( $repo = $url.substring($pos2, $url.lastIndexOf('.git')) )
                             <a href="https://github.com/${owner}/${repo}">
-                                <img src="https://www.jcabi.com/fork-me.svg" class="fork-me"/>
+                                <img src="https://www.jcabi.com/fork-me.svg" class="fork-me">
                             </a>
                         #end
                         <article itemprop="articleBody">
@@ -139,8 +140,9 @@
                 <footer class="legal-notes">
                     <div>
                         Copyright &#169;
-                        #set ($currentYear = ${currentDate.year} + 1900)
-                        #if (${project.inceptionYear} && ${project.inceptionYear} != ${currentYear.toString()})
+                        $dateFormat.applyPattern('yyyy')
+                        #set ($currentYear = $dateFormat.format($currentDate))
+                        #if (${project.inceptionYear} && ${project.inceptionYear} != ${currentYear})
                             ${project.inceptionYear}-${currentYear}
                         #else
                             ${currentYear}

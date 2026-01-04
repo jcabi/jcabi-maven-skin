@@ -4,10 +4,11 @@
  */
 
 import com.jcabi.matchers.XhtmlMatchers
-import com.jcabi.w3c.ValidatorBuilder
 import groovy.xml.XmlParser
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 
 MatcherAssert.assertThat(
     "We shouldn't have any errors",
@@ -16,10 +17,13 @@ MatcherAssert.assertThat(
 )
 
 def html = new File(basedir, 'target/site/index.html').text
+def doc = Jsoup.parse(html)
+doc.outputSettings().syntax(Document.OutputSettings.Syntax.xml)
+def xhtml = doc.html()
 def version = new XmlParser().parse(new File(basedir, 'pom.xml')).version.text()
 MatcherAssert.assertThat(
     "HTML must contain favicon link, the link is relative to the site root",
-    html,
+    xhtml,
     XhtmlMatchers.hasXPaths(
         '//xhtml:img[@src="../../favicon.ico"]',
     )

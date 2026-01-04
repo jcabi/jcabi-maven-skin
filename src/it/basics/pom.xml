@@ -14,6 +14,7 @@
   <name>basics</name>
   <version>@project.version@</version>
   <packaging>pom</packaging>
+  <inceptionYear>2012</inceptionYear>
   <modules>
     <module>basics-child</module>
   </modules>

@@ -15,6 +15,7 @@
   <packaging>jar</packaging>
   <name>jcabi-maven-skin</name>
   <description>jcabi Maven Skin</description>
+  <inceptionYear>2012</inceptionYear>
   <issueManagement>
     <system>github</system>
     <url>https://github.com/jcabi/jcabi-maven-skin/issues</url>
@@ -76,6 +77,11 @@
             <version>1.8.0</version>
           </dependency>
           <dependency>
+            <groupId>com.jcabi</groupId>
+            <artifactId>jcabi-xml</artifactId>
+            <version>0.32.0</version>
+          </dependency>
+          <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.20.0</version>
@@ -86,11 +92,6 @@
             <version>1.1.4</version>
           </dependency>
           <dependency>
-            <groupId>com.jcabi</groupId>
-            <artifactId>jcabi-w3c</artifactId>
-            <version>1.4.0</version>
-          </dependency>
-          <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-client</artifactId>
             <version>1.19.4</version>
@@ -99,6 +100,11 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-core</artifactId>
             <version>3.0</version>
+          </dependency>
+          <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.18.3</version>
           </dependency>
         </dependencies>
       </plugin>

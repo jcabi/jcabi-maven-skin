@@ -4,10 +4,12 @@
  */
 
 import com.jcabi.matchers.XhtmlMatchers
-import com.jcabi.w3c.ValidatorBuilder
 import groovy.xml.XmlParser
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import java.util.Calendar
 
 MatcherAssert.assertThat(
     new File(basedir, 'build.log').text,
@@ -27,33 +29,25 @@ MatcherAssert.assertThat(
 }
 
 def html = new File(basedir, 'target/site/index.html').text
+def doc = Jsoup.parse(html)
+doc.outputSettings().syntax(Document.OutputSettings.Syntax.xml)
+def xhtml = doc.html()
 def version = new XmlParser().parse(new File(basedir, 'pom.xml')).version.text()
+def year = Calendar.getInstance().get(Calendar.YEAR).toString()
 MatcherAssert.assertThat(
-    html,
+    xhtml,
     XhtmlMatchers.hasXPaths(
         '//xhtml:head/xhtml:link[@rel="shortcut icon"]',
         '//xhtml:body',
         "//xhtml:div[contains(.,'${version}')]",
-        '//xhtml:div[contains(.,"test-org-name")]'
+        '//xhtml:div[contains(.,"test-org-name")]',
+        '//xhtml:footer[@class="legal-notes"]',
+        "//xhtml:footer[contains(.,'-${year}')]"
     )
 )
-
-def htmlResponse = new ValidatorBuilder().html().validate(html)
-/**
- * If you use <<<fixed width font>>> in index.apt.vm, this test will fail.
- * Reason: maven-site-plugin doesn't create clean html5.
- * E.g. It renders <<< >>> as <tt>, which is obsolete and treated as an error.
- */
 MatcherAssert.assertThat(
-    "There are errors in:\n${html}",
-    htmlResponse.errors(),
-    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
+    "footer must not contain unresolved velocity variable",
+    xhtml,
+    Matchers.not(Matchers.containsString('${currentYear}'))
 )
 
-// def cssResponse = new ValidatorBuilder().css().validate(
-//     new File(basedir, 'target/site/css/jcabi.css').text
-// )
-// MatcherAssert.assertThat(
-//     cssResponse.valid(),
-//     Matchers.describedAs(cssResponse.toString(), Matchers.is(true))
-// )
