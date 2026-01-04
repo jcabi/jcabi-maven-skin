@@ -9,7 +9,7 @@
 
 More details are here: [skin.jcabi.com](http://skin.jcabi.com/index.html).
 
-Use it in your `site.xml`, as explained in [skinning]:
+Use it in your [site.xml], as explained in [skinning]:
 
 ```xml
 <site>
@@ -39,3 +39,4 @@ Make sure you have Maven 3.2+, Java7+ and
 [fontcustom](http://fontcustom.com/) gem installed.
 
 [skinning]: http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html#Skinning
+[site.xml]: https://maven.apache.org/doxia/doxia-sitetools/doxia-site-model/site.html
