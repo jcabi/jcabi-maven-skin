@@ -17,7 +17,7 @@ Use it in your [site.xml], as explained in [skinning]:
   <skin>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
-    <version>0.0.0</version>
+    <version>2.0.0</version>
   </skin>
   [...]
 </site>
