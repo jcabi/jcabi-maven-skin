@@ -3,28 +3,20 @@
  * SPDX-FileCopyrightText: Copyright (c) 2012-2026 Yegor Bugayenko
  * SPDX-License-Identifier: MIT
 -->
-<project xmlns="http://maven.apache.org/DECORATION/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/2.0.0 http://maven.apache.org/xsd/site-2.0.0.xsd" name="jcabi-maven-skin">
+<site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd" name="jcabi-maven-skin">
   <skin>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
     <version>1.8.2</version>
   </skin>
-  <bannerLeft>
-    <name>jcabi-maven-skin</name>
-    <alt>jcabi</alt>
-    <src>https://jcabi.com/logo-square.svg</src>
-    <href>https://skin.jcabi.com/</href>
-    <width>64</width>
-    <height>64</height>
+  <bannerLeft name="jcabi-maven-skin" href="https://skin.jcabi.com/">
+    <image src="https://jcabi.com/logo-square.svg" alt="jcabi" width="64" height="64"/>
   </bannerLeft>
   <body>
-    <head>
-      &lt;link href="https://www.jcabi.com/favicon.ico" rel="shortcut icon"/&gt;
-    </head>
     <menu name="Overview">
       <item name="Introduction" href="./index.html"/>
       <item name="Release History" href="https://github.com/jcabi/jcabi-maven-skin/releases"/>
     </menu>
     <menu ref="reports"/>
   </body>
-</project>
+</site>
