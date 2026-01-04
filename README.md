@@ -1,4 +1,4 @@
-# Universal Maven Skin
+# Good Looking Maven Skin
 
 [![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
 [![DevOps By Rultor.com](http://www.rultor.com/b/jcabi/jcabi-maven-skin)](http://www.rultor.com/p/jcabi/jcabi-maven-skin)
