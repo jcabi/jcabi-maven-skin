@@ -42,6 +42,7 @@ MatcherAssert.assertThat(
         '//xhtml:body',
         "//xhtml:div[contains(.,'${version}')]",
         '//xhtml:div[contains(.,"test-org-name")]',
+        "//xhtml:footer[contains(., '2012-${year}')]",
         '//xhtml:footer[@class="legal-notes"]'
     )
 )
@@ -50,7 +51,7 @@ MatcherAssert.assertThat(
     xhtml,
     Matchers.not(
         Matchers.anyOf(
-            Matchers.containsString('${currentYear}'),
+            Matchers.containsString('$' + '{currentYear}'),
             Matchers.containsString('$' + 'dateFormat')
         )
     )

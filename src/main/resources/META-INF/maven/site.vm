@@ -130,17 +130,11 @@
                 <footer class="legal-notes">
                     <div>
                         Copyright &#169;
-                        #if ($currentDate)
-                            #set ($currentYear = $currentDate.getYear() + 1900)
-                            #if (${project.inceptionYear} && ${project.inceptionYear} != ${currentYear})
-                                ${project.inceptionYear}-${currentYear}
-                            #else
-                                ${currentYear}
-                            #end
+                        #set ($year = $date.year)
+                        #if (${project.inceptionYear} && ${project.inceptionYear} != ${year})
+                            ${project.inceptionYear}-${year}
                         #else
-                            #if (${project.inceptionYear})
-                                ${project.inceptionYear}
-                            #end
+                            ${year}
                         #end
                     </div>
                     <div>${project.organization.name}, All Rights Reserved.</div>

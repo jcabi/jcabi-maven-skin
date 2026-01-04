@@ -167,25 +167,23 @@ table {
       text-overflow: ellipsis;
       overflow: hidden;
 
-      &.active {
-        font-weight: bold;
+      a {
+        text-decoration: none;
       }
 
       ul {
         list-style: none;
         padding-left: .5 * $em;
-
-        li {
-          color: $black;
-          font-weight: 400;
-        }
       }
     }
 
-    li {
-      a {
-        text-decoration: none;
-      }
+    .active {
+      font-weight: bold;
+    }
+
+    li li {
+      color: $black;
+      font-weight: 400;
     }
   }
 }
@@ -197,25 +195,26 @@ table {
   padding-left: 0;
   font-size: .8 * $em;
 
-  li {
+  /* stylelint-disable-next-line no-descending-specificity */
+  &.badges li {
     display: inline;
     border: 1px solid $gray;
     border-radius: 3px;
     padding: .2 * $em;
     margin-right: .6 * $em;
+  }
 
-    &.menu-button {
-      display: none;
-      cursor: pointer;
+  .menu-button {
+    display: none;
+    cursor: pointer;
 
-      &:hover {
-        background-color: $gray;
-        color: white;
-      }
+    &:hover {
+      background-color: $gray;
+      color: white;
+    }
 
-      @media all and (max-width: $width) {
-        display: inline;
-      }
+    @media all and (max-width: $width) {
+      display: inline;
     }
   }
 }
@@ -269,7 +268,8 @@ table {
 }
 
 .logo {
-  a {
+  /* stylelint-disable-next-line no-descending-specificity */
+  &.logo a {
     border: 0;
   }
 }
