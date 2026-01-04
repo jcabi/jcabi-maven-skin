@@ -8,30 +8,20 @@
         #foreach ($author in $authors)
             <meta name="author" content="${author}">
         #end
-        #if ($decoration.googleAnalyticsAccountId)
-            <script>
-                var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', '${decoration.googleAnalyticsAccountId}']);
-                _gaq.push(['_trackPageview']);
-                (function() {
-                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                })();
-            </script>
-        #end
-        #if ($decoration.body.head)
-            #foreach ($item in $decoration.body.head.getChildren())
-                ## Workaround for DOXIA-150 due to a non-desired behaviour in p-u
-                ## @see org.codehaus.plexus.util.xml.Xpp3Dom#toString()
-                ## @see org.codehaus.plexus.util.xml.Xpp3Dom#toUnescapedString()
-                #set ($documentHeader = '<?xml version="1.0" encoding="UTF-8"?>')
-                #if ($item.name == "script")
-                    #set ($headItem = $StringUtils.replace($item.toUnescapedString(), $documentHeader, ""))
-                #else
-                    #set ($headItem = $StringUtils.replace($item.toString(), $documentHeader, ""))
-                #end
-                $headItem.replaceAll(" */>$", ">")
+        #if ($decoration.custom && $decoration.custom.getChild("jcabi"))
+            #set ($jcabi = $decoration.custom.getChild("jcabi"))
+            #if ($jcabi.getChild("favicon"))
+                <link rel="icon" href="$jcabi.getChild("favicon").getValue()">
+            #end
+            #if ($jcabi.getChild("googleAnalyticsId"))
+                #set ($gaId = $jcabi.getChild("googleAnalyticsId").getValue())
+                <script async src="https://www.googletagmanager.com/gtag/js?id=${gaId}"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${gaId}');
+                </script>
             #end
         #end
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin=anonymous></script>

@@ -9,6 +9,11 @@
     <artifactId>jcabi-maven-skin</artifactId>
     <version>${project.version}</version>
   </skin>
+  <custom>
+    <jcabi>
+      <favicon>http://img.jcabi.com/favicon.ico</favicon>
+    </jcabi>
+  </custom>
   <bannerLeft name="jcabi" href="https://www.jcabi.com/">
     <image src="https://img.jcabi.com/logo-square.png" alt="jcabi" width="48" height="48"/>
   </bannerLeft>

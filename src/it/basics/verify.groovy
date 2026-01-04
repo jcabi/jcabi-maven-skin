@@ -38,6 +38,7 @@ MatcherAssert.assertThat(
     "HTML structure must be valid for Doxia 2.0",
     xhtml,
     XhtmlMatchers.hasXPaths(
+        '//xhtml:head/xhtml:link[@rel="icon"]',
         '//xhtml:body',
         "//xhtml:div[contains(.,'${version}')]",
         '//xhtml:div[contains(.,"test-org-name")]',
