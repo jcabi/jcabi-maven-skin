@@ -114,7 +114,7 @@
                                 <li>
                                     $dateFormat.applyPattern("yyyy-MM-dd'T'hh:mm:ss'Z'")
                                     <time itemprop="datePublished" datetime="${dateFormat.format($currentDate)}">
-                                        $dateFormat.applyPattern('dd-MMM-yyyy')
+                                        $dateFormat.applyPattern('d-MMM-yyyy')
                                         ${dateFormat.format($currentDate)}
                                     </time>
                                 </li>

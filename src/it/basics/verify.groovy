@@ -51,7 +51,7 @@ MatcherAssert.assertThat(
     Matchers.not(
         Matchers.anyOf(
             Matchers.containsString('${currentYear}'),
-            Matchers.containsString('$date.format')
+            Matchers.containsString('$' + 'date.format')
         )
     )
 )
