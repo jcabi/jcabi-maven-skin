@@ -50,4 +50,3 @@ MatcherAssert.assertThat(
     xhtml,
     Matchers.not(Matchers.containsString('${currentYear}'))
 )
-
