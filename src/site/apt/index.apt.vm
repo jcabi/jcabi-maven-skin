@@ -11,19 +11,68 @@
 
 jcabi Maven Skin
 
-  Use it in your <<<site.xml>>>, as explained in
-  {{{http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html#Skinning}skinning}}:
+  Use it in your <<<site.xml>>> with Maven Site Model 2.0.0:
 
 +--
-<project>
-  [...]
+<site xmlns="http://maven.apache.org/SITE/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0
+      https://maven.apache.org/xsd/site-2.0.0.xsd"
+    name="My Project">
   <skin>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
     <version>${project.version}</version>
   </skin>
-  [...]
-</project>
+  <bannerLeft name="My Project" href="https://example.com/">
+    <image src="https://example.com/logo.png" alt="Logo" width="48" height="48"/>
+  </bannerLeft>
+  <body>
+    <menu ref="reports"/>
+  </body>
+</site>
++--
+
+* Custom Configuration
+
+  The skin supports custom configuration through the <<<\<custom\>>>> element:
+
++--
+<site xmlns="http://maven.apache.org/SITE/2.0.0" ...>
+  <skin>...</skin>
+  <custom>
+    <jcabi>
+      <favicon>https://example.com/favicon.ico</favicon>
+      <googleAnalyticsId>G-XXXXXXXXXX</googleAnalyticsId>
+    </jcabi>
+  </custom>
+  ...
+</site>
++--
+
+** Favicon
+
+  To add a favicon to your site, use the <<<\<favicon\>>>> element:
+
++--
+<custom>
+  <jcabi>
+    <favicon>https://example.com/favicon.ico</favicon>
+  </jcabi>
+</custom>
++--
+
+** Google Analytics
+
+  To enable Google Analytics 4, use the <<<\<googleAnalyticsId\>>>> element
+  with your measurement ID:
+
++--
+<custom>
+  <jcabi>
+    <googleAnalyticsId>G-XXXXXXXXXX</googleAnalyticsId>
+  </jcabi>
+</custom>
 +--
 
   This site is using <<<jcabi-maven-skin>>>.
