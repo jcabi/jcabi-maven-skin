@@ -32,6 +32,17 @@ def html = new File(basedir, 'target/site/index.html').text
 def doc = Jsoup.parse(html)
 doc.outputSettings().syntax(Document.OutputSettings.Syntax.xml)
 def xhtml = doc.html()
+MatcherAssert.assertThat(
+    "HTML must not contain unresolved velocity variable",
+    xhtml,
+    Matchers.not(
+        Matchers.anyOf(
+            Matchers.containsString('$' + '{currentYear}'),
+            Matchers.containsString('$' + 'date'),
+            Matchers.containsString('$' + 'dateFormat')
+        )
+    )
+)
 def version = new XmlParser().parse(new File(basedir, 'pom.xml')).version.text()
 def year = Calendar.getInstance().get(Calendar.YEAR).toString()
 MatcherAssert.assertThat(
@@ -44,15 +55,5 @@ MatcherAssert.assertThat(
         '//xhtml:div[contains(.,"test-org-name")]',
         "//xhtml:footer[contains(., '2012-${year}')]",
         '//xhtml:footer[@class="legal-notes"]'
-    )
-)
-MatcherAssert.assertThat(
-    "footer must not contain unresolved velocity variable",
-    xhtml,
-    Matchers.not(
-        Matchers.anyOf(
-            Matchers.containsString('$' + '{currentYear}'),
-            Matchers.containsString('$' + 'dateFormat')
-        )
     )
 )
