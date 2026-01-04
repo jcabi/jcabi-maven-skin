@@ -12,14 +12,15 @@ More details are here: [skin.jcabi.com](http://skin.jcabi.com/index.html).
 Use it in your `site.xml`, as explained in [skinning]:
 
 ```xml
-<project>
+<site>
   [...]
   <skin>
     <groupId>com.jcabi</groupId>
     <artifactId>jcabi-maven-skin</artifactId>
+    <version>0.0.0</version>
   </skin>
   [...]
-</project>
+</site>
 ```
 
 ## How to contribute?
