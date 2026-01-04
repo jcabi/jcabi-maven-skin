@@ -48,5 +48,10 @@ MatcherAssert.assertThat(
 MatcherAssert.assertThat(
     "footer must not contain unresolved velocity variable",
     xhtml,
-    Matchers.not(Matchers.containsString('${currentYear}'))
+    Matchers.not(
+        Matchers.anyOf(
+            Matchers.containsString('${currentYear}'),
+            Matchers.containsString('$date.format')
+        )
+    )
 )
