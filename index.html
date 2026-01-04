@@ -6,7 +6,7 @@
         <title>jcabi Maven Skin – jcabi-maven-skin</title>
         <link media="all" rel="stylesheet" type="text/css" href="./css/jcabi.css"/>
                     <meta name="author" content="Yegor Bugayenko"/>
-                                                    <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+                                <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
         <script src="./js/jcabi.js"></script>
     </head>
     <body>
@@ -87,7 +87,7 @@
                             </div>
                             <ul class="badges">
                                 <li>
-                                    <strong itemprop="version">1.8.4</strong>
+                                    <strong itemprop="version">2.0.0</strong>
                                 </li>
                                 <li>
                                     $dateFormat.applyPattern("yyyy-MM-dd'T'hh:mm:ss'Z'")
@@ -106,17 +106,51 @@
                                                 <article itemprop="articleBody">
                             <section><a id="jcabi_Maven_Skin"></a>
 <h1>jcabi Maven Skin</h1>
-<p>Use it in your <code>site.xml</code>, as explained in <a class="externalLink" href="http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html#Skinning">skinning</a>:</p>
-<pre><code>&lt;project&gt;
-  [...]
+<p>Use it in your <code>site.xml</code> with Maven Site Model 2.0.0:</p>
+<pre><code>&lt;site xmlns=&quot;http://maven.apache.org/SITE/2.0.0&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://maven.apache.org/SITE/2.0.0
+      https://maven.apache.org/xsd/site-2.0.0.xsd&quot;
+    name=&quot;My Project&quot;&gt;
   &lt;skin&gt;
     &lt;groupId&gt;com.jcabi&lt;/groupId&gt;
     &lt;artifactId&gt;jcabi-maven-skin&lt;/artifactId&gt;
-    &lt;version&gt;1.8.4&lt;/version&gt;
+    &lt;version&gt;2.0.0&lt;/version&gt;
   &lt;/skin&gt;
-  [...]
-&lt;/project&gt;</code></pre>
-<p>This site is using <code>jcabi-maven-skin</code>.</p></section>
+  &lt;bannerLeft name=&quot;My Project&quot; href=&quot;https://example.com/&quot;&gt;
+    &lt;image src=&quot;https://example.com/logo.png&quot; alt=&quot;Logo&quot; width=&quot;48&quot; height=&quot;48&quot;/&gt;
+  &lt;/bannerLeft&gt;
+  &lt;body&gt;
+    &lt;menu ref=&quot;reports&quot;/&gt;
+  &lt;/body&gt;
+&lt;/site&gt;</code></pre><section><a id="Custom_Configuration"></a>
+<h2>Custom Configuration</h2>
+<p>The skin supports custom configuration through the <code>&lt;custom&gt;</code> element:</p>
+<pre><code>&lt;site xmlns=&quot;http://maven.apache.org/SITE/2.0.0&quot; ...&gt;
+  &lt;skin&gt;...&lt;/skin&gt;
+  &lt;custom&gt;
+    &lt;jcabi&gt;
+      &lt;favicon&gt;https://example.com/favicon.ico&lt;/favicon&gt;
+      &lt;googleAnalyticsId&gt;G-XXXXXXXXXX&lt;/googleAnalyticsId&gt;
+    &lt;/jcabi&gt;
+  &lt;/custom&gt;
+  ...
+&lt;/site&gt;</code></pre><section><a id="Favicon"></a>
+<h3>Favicon</h3>
+<p>To add a favicon to your site, use the <code>&lt;favicon&gt;</code> element:</p>
+<pre><code>&lt;custom&gt;
+  &lt;jcabi&gt;
+    &lt;favicon&gt;https://example.com/favicon.ico&lt;/favicon&gt;
+  &lt;/jcabi&gt;
+&lt;/custom&gt;</code></pre></section><section><a id="Google_Analytics"></a>
+<h3>Google Analytics</h3>
+<p>To enable Google Analytics 4, use the <code>&lt;googleAnalyticsId&gt;</code> element with your measurement ID:</p>
+<pre><code>&lt;custom&gt;
+  &lt;jcabi&gt;
+    &lt;googleAnalyticsId&gt;G-XXXXXXXXXX&lt;/googleAnalyticsId&gt;
+  &lt;/jcabi&gt;
+&lt;/custom&gt;</code></pre>
+<p>This site is using <code>jcabi-maven-skin</code>.</p></section></section></section>
                         </article>
                     </div>
                 </main>
