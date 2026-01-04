@@ -42,13 +42,19 @@
           <artifactId>maven-resources-plugin</artifactId>
           <configuration>
             <delimiters>
-              <delimiter>@</delimiter>
+              <delimiter>@{*}</delimiter>
             </delimiters>
             <useDefaultDelimiters>false</useDefaultDelimiters>
           </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>nl.geodienstencentrum.maven</groupId>
