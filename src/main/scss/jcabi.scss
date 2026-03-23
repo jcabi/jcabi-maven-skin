@@ -105,7 +105,7 @@ table {
     padding-bottom: .7 * $em;
     font-weight: normal;
     text-align: left;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $white;
   }
 
   td {
@@ -215,7 +215,7 @@ table {
 
     &:hover {
       background-color: $gray;
-      color: white;
+      color: $white;
     }
 
     @media all and (max-width: $width) {
