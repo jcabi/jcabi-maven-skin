@@ -125,17 +125,6 @@
             <groupId>com.qulice</groupId>
             <artifactId>qulice-maven-plugin</artifactId>
             <version>0.30.11</version>
-            <configuration>
-              <excludes combine.children="append">
-                <exclude>checkstyle:/src/main/glyphs/.*</exclude>
-                <exclude>checkstyle:/src/it/.*</exclude>
-                <exclude>checkstyle:/src/site/apt/index.apt.vm</exclude>
-                <exclude>checkstyle:/src/main/resources/META-INF/maven/site.vm</exclude>
-                <exclude>checkstyle:/src/main/resources/images/.*</exclude>
-                <exclude>checkstyle:/src/main/resources/js/.*</exclude>
-                <exclude>xml:/src/it/settings.xml</exclude>
-              </excludes>
-            </configuration>
           </plugin>
         </plugins>
       </build>
