@@ -57,3 +57,17 @@ MatcherAssert.assertThat(
         '//xhtml:footer[@class="legal-notes"]'
     )
 )
+
+[
+    'target/site/index.html': 'example.github.io',
+    'basics-child/target/site/index.html': 'example_repo',
+].each { path, repository ->
+    MatcherAssert.assertThat(
+        "Fork badge must link to ${repository}",
+        Jsoup.parse(new File(basedir, path).text)
+            .select('a:has(img.fork-me)').attr('href'),
+        Matchers.equalTo("https://github.com/jcabi/${repository}".toString())
+    )
+}
+
+return true

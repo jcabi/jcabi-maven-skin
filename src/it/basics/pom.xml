@@ -14,6 +14,9 @@
   <modules>
     <module>basics-child</module>
   </modules>
+  <scm>
+    <connection>scm:git:git@github.com:jcabi/example.github.io.git</connection>
+  </scm>
   <organization>
     <name>test-org-name</name>
   </organization>

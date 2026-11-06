@@ -118,11 +118,10 @@
                         </header>
                         <div id="here-goes-menu" class="menu-off"></div>
                         #set ( $url = $project.scm.connection )
-                        #if ( $url.matches('.*github.com(?:/|:)([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-]+)\.git') )
-                            #set ( $pos1 = $url.lastIndexOf('github.com') + 11 )
-                            #set ( $pos2 = $url.lastIndexOf('/') + 1 )
-                            #set ( $owner = $url.substring($pos1, $url.lastIndexOf('/')) )
-                            #set ( $repo = $url.substring($pos2, $url.lastIndexOf('.git')) )
+                        #set ( $github = '.*github\.com(?:/|:)([a-zA-Z0-9\-]+)/([a-zA-Z0-9_.\-]+?)(?:\.git)?$' )
+                        #if ( $url.matches($github) )
+                            #set ( $owner = $url.replaceAll($github, '$1') )
+                            #set ( $repo = $url.replaceAll($github, '$2') )
                             <a href="https://github.com/${owner}/${repo}">
                                 <img src="https://www.jcabi.com/fork-me.svg" class="fork-me">
                             </a>
