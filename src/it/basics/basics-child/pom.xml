@@ -13,4 +13,7 @@
   <artifactId>jcabi-test-basics-child</artifactId>
   <name>basics-child</name>
   <packaging>jar</packaging>
+  <scm>
+    <connection>scm:git:https://github.com/jcabi/example_repo</connection>
+  </scm>
 </project>
