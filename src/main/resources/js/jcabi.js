@@ -13,7 +13,7 @@ $(document).ready(
                     $('#menu').clone().attr('class', 'mobile-menu').appendTo('#here-goes-menu');
                     $('#here-goes-menu').attr('class', 'menu-on');
                 } else {
-                    $('.mobile-menu').hide();
+                    $('.mobile-menu').remove();
                     $('#here-goes-menu').attr('class', 'menu-off');
                 }
             }
