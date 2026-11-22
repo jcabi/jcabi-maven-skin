@@ -70,4 +70,10 @@ MatcherAssert.assertThat(
     )
 }
 
+MatcherAssert.assertThat(
+    "Mobile menu script must remove the menu copy on close",
+    new File(basedir, 'target/site/js/jcabi.js').text,
+    Matchers.not(Matchers.containsString("\$('.mobile-menu').hide()"))
+)
+
 return true
