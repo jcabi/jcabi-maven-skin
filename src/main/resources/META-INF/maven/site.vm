@@ -92,7 +92,9 @@
                                 <a href="${decoration.bannerLeft.href}"
                                     title="#if ($decoration.bannerLeft.name) ${decoration.bannerLeft.name} #else logo #end">
                                     #if ($decoration.bannerLeft.image)
-                                    <img src="${decoration.bannerLeft.image.src}"
+                                    #set ($banner = $PathTool.calculateLink($decoration.bannerLeft.image.src, $relativePath))
+                                    #set ($banner = $banner.replaceAll('\\', '/'))
+                                    <img src="${banner}"
                                         alt="$!{decoration.bannerLeft.image.alt}"
                                         #if ($decoration.bannerLeft.image.width)
                                             width="${decoration.bannerLeft.image.width}"
