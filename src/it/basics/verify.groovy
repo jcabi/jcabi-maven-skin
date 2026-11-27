@@ -51,6 +51,7 @@ MatcherAssert.assertThat(
     XhtmlMatchers.hasXPaths(
         '//xhtml:head/xhtml:link[@rel="icon"]',
         '//xhtml:body',
+        '//xhtml:img[@src="https://img.jcabi.com/logo-square.png"]',
         "//xhtml:div[contains(.,'${version}')]",
         '//xhtml:div[contains(.,"test-org-name")]',
         "//xhtml:footer[contains(., '2012-${year}')]",

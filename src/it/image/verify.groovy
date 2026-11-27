@@ -28,3 +28,10 @@ MatcherAssert.assertThat(
         '//xhtml:img[@src="../../favicon.ico"]'
     )
 )
+
+MatcherAssert.assertThat(
+    'A nested page must resolve the same banner image as the index',
+    Jsoup.parse(new File(basedir, 'target/site/guide/intro.html').text)
+        .select('div.logo a img').attr('src'),
+    Matchers.equalTo('../../../favicon.ico')
+)
